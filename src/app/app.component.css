@@ -3,3 +3,21 @@
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
   }
+
+  .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+ }
+ 
+ .img-left,
+ .img-center,
+ .img-right {
+   width: 150px; /* ajuste conforme necessário */
+   height: auto;
+ }
+ 
+ .img-center {
+   margin: 0 auto;
+ }

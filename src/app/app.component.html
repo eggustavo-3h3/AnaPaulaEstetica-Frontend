@@ -1,14 +1,27 @@
+<div class="container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz7eBkBmLs1_87rCXdI91IwQ2DxQC9s1eBPA&s" alt="" class="img-left">
+  <img src="/assets/logo.jpg" alt="teste" class="img-center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz7eBkBmLs1_87rCXdI91IwQ2DxQC9s1eBPA&s" alt="" class="img-right">
+</div>
+
 <mat-toolbar color="primary">
-  <a mat-button routerLink="tipo-servico/listar">Serviços</a>
 
-  <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
+  <a mat-button routerLink="/home">Início</a>
 
+  <span class="example-fill-remaining-space"></span>
+  <a mat-button routerLink="/tipo-servico/listar">Serviços</a>
+
+  <span class="example-fill-remaining-space"></span>
+  <a mat-button routerLink="/agendamento">Agendamento</a>
+
+  <span class="example-fill-remaining-space"></span>
+  <a mat-button routerLink="/sobre">Sobre</a>
+
+  <span class="example-fill-remaining-space"></span>
   <a mat-button routerLink="/login">Login</a>
+
+  <span class="example-fill-remaining-space"></span>
 </mat-toolbar>
 
 <router-outlet />
-
-<div>
-  <h2>Rodapé</h2>
-</div>
