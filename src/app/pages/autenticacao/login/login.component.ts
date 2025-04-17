@@ -42,7 +42,6 @@ export class LoginComponent {
           "Login realizado com sucesso!",
           "Fechar",
           {duration: 3000}
-          
         );
       },
       error:() => {

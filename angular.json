@@ -28,9 +28,13 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
+              "src/styles.css",
+              "public/assets/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/assets/js/color-modes.js",
+              "public/assets/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
