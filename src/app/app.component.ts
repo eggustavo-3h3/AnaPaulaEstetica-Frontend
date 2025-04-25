@@ -12,4 +12,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'AnaPaulaEstetica';
+  menuOpen = false; // Estado do menu colapsável
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; // Alterna entre aberto e fechado
+  }
 }
