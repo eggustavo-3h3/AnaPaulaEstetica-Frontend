@@ -1,74 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #fce6d3; /* tom pastel da imagem */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  body {
+    background-color: #fce6d3 !important;
+  }
+    
+  
+  
+  /* Logo */
+  .logo {
     text-align: center;
-}
-
-h2 {
     margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .logo h1 {
     font-size: 24px;
-    color: #333;
-}
-
-.input-group {
+    color: #c5a996;
+    letter-spacing: 5px;
+    font-weight: 300;
+  }
+  
+  /* Container do formulário */
+  .form-container {
+    background-color: #efd7c5;
+    padding: 30px 40px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Campos de entrada */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
     margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    font-size: 14px;
-    color: #333;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
+    background-color: #fff7f0;
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+  }
+  
+  /* Link de políticas */
+  .link-politicas {
+    font-size: 13px;
+    color: #3e3e3e;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  
+  /* Botões */
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f3e1cf;
+    color: #a89f99;
     font-size: 16px;
     cursor: pointer;
-}
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e5cdbc;
+  }
+  
+  /* Login -----------------------
 
-button:hover {
-    background-color: #45a049;
-}
-
-p {
-    font-size: 14px;
-}
+  /* Cor de fundo fiel ao da imagem */
