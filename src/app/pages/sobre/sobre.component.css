@@ -1,0 +1,132 @@
+/* Estilo geral */
+.container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #fefefe; /* Fundo branco */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #8c6a4f; /* Cor semelhante ao logo */
+}
+
+/* Layout principal */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Seção de informações */
+.info {
+  flex: 1 1 300px;
+  background-color: #fdf4e3; /* Fundo bege claro */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 3px solid #8c6a4f; /* Borda da imagem */
+}
+
+.info p {
+  text-align: justify;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Seção de contato */
+.contact {
+  flex: 1 1 300px;
+  background-color: #fdf4e3; /* Fundo bege claro */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2, .contact h3 {
+  color: #8c6a4f; /* Cor semelhante ao logo */
+  margin-bottom: 8px;
+}
+
+.contact p {
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Seção de localização */
+.location {
+  flex: 1 1 300px;
+  background-color: #fdf4e3; /* Fundo bege claro */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.location img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-top: 8px;
+  border: 2px solid #8c6a4f; /* Borda da imagem */
+}
+
+.location h2 {
+  color: #8c6a4f; /* Cor semelhante ao logo */
+  margin-bottom: 8px;
+}
+
+.location p {
+  color: #000000; /* Cor do texto */
+  line-height: 1.6;
+}
+
+.location iframe {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 8px;
+  border: 2px solid #8c6a4f; /* Borda semelhante ao design */
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+  background-color: #f9f9f9; /* Fundo cinza claro */
+  padding: 8px;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info, .contact, .location {
+    flex: 1 1 100%;
+  }
+
+  .info img {
+    width: 120px;
+    height: 120px;
+  }
+}
