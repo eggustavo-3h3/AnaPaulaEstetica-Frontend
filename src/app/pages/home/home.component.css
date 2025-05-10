@@ -14,8 +14,9 @@ body {
 
 .carousel-item img {
   width: 75%; /* Garante que a imagem ocupe toda a largura da coluna */
-  max-width: 650px; /* Define um tamanho máximo para a largura */
+  max-width: 950px; /* Define um tamanho máximo para a largura */
   height: 600px; /* Define uma altura fixa */
+  width: 1000px;
   object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente para caber no espaço */
   border-radius: 8px; /* Adiciona bordas arredondadas */
   margin: 0 auto; /* Centraliza a imagem horizontalmente */
@@ -28,7 +29,7 @@ body {
 }
 
 .carousel-item p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
