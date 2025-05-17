@@ -8,7 +8,7 @@ body {
 /* Carousel */
 .carousel {
   margin-bottom: 4rem;
-  background-color: #333; /* Fundo cinza escuro */
+  background-color: #CDB79E; /* Fundo cinza escuro */
   color: #fff; /* Texto branco */
 }
 
@@ -16,7 +16,7 @@ body {
   width: 75%; /* Garante que a imagem ocupe toda a largura da coluna */
   max-width: 950px; /* Define um tamanho máximo para a largura */
   height: 600px; /* Define uma altura fixa */
-  width: 1000px;
+  width: 650px;
   object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente para caber no espaço */
   border-radius: 8px; /* Adiciona bordas arredondadas */
   margin: 0 auto; /* Centraliza a imagem horizontalmente */
