@@ -6,10 +6,6 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
-
-  .card-container {
-    display: flex;
     gap: 30px;
   }
 
@@ -18,9 +14,10 @@ body {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    width: 180px;
+    width: 225px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    
   }
 
   .card:hover {
@@ -28,16 +25,22 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .card img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #555;
-  }
+.card img {
+  display: block;          /* transforma em bloco para poder usar margem automática */
+  margin: 0 auto;          /* centraliza horizontalmente */
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #555;
+}
 
-  .card p {
-    margin-top: 10px;
-    color: #666;
-    font-size: 16px;
-  }
+.card h3 {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+}
+
+  
