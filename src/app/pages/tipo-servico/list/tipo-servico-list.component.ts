@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { categoriaService } from '../../../services/categoria.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor, AsyncPipe } from '@angular/common';
 import { Categoria } from '../../../model/categoria.model';
-
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule],
   standalone: true,
+  imports: [CommonModule, NgFor, AsyncPipe, RouterLink, RouterOutlet],
   templateUrl: './tipo-servico-list.component.html',
-  styleUrl: './tipo-servico-list.component.css'
+  styleUrls: ['./tipo-servico-list.component.css']
 })
-
 export class TipoServicoListComponent implements OnInit {
-  constructor(private categoriaService : categoriaService){}
- 
   categoria$ = new Observable<Categoria[]>();
 
-  listarCategorias(){
-   this.categoria$ = this.categoriaService.listarCategorias();
+  constructor(private categoriaService: categoriaService) {}
+
+  listarCategorias() {
+    this.categoria$ = this.categoriaService.listarCategorias();
   }
 
   ngOnInit(): void {
     this.listarCategorias();
   }
 }
+
+

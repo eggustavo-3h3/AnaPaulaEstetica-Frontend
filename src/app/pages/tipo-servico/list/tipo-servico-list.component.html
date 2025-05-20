@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cards Interativos com Imagem</title>
-  
-</head>
 <body>
+    <a routerLink="/coxinha" class="card">
+      <img src="assets/img/sobra.jpg" alt="SobrancelhaPersonalizada">
+      <div class="card-content">
+        <h3>Sobrancelha</h3>
+      </div>
+    </a>
 
-  <a href="https://exemplo1.com" class="card" target="_blank">
-  <img src="assets/img/sobra.jpg" alt="SobrancelhaPersonalizada">
-    <div class="card-content">
-      <h3>Sobrancelha</h3> 
-    </div>
-  </a>
+    <a href="https://exemplo2.com" class="card" target="_blank">
+      <img src="assets/img/maquii.jpg" alt="Imagem 2">
+      <div class="card-content">
+        <h3>Maquiagem</h3>
+      </div>
+    </a>
+
+    <a href="https://exemplo3.com" class="card" target="_blank">
+      <img src="assets/img/estetico.jpg" alt="Imagem 3">
+      <div class="card-content">
+        <h3>Procedimentos Esteticos</h3>
+      </div>
+    </a>
+    <div class="card-container">
   
-  <a href="https://exemplo2.com" class="card" target="_blank">
-    <img src="assets/img/maquii.jpg" alt="Imagem 2">
-    <div class="card-content">
-      <h3>Maquiagem</h3>
-    </div>
-  </a>
-
-  <a href="https://exemplo3.com" class="card" target="_blank">
-    <img src="assets/img/estetico.jpg" alt="Imagem 3">
-    <div class="card-content">
-      <h3>Procedimentos Esteticos</h3>
-    </div>
-  </a>
-
+</div>
 </body>
-</html>
+<router-outlet></router-outlet>
