@@ -1,29 +1,28 @@
 body {
-    background-color: #ead3b8;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    gap: 30px;
-  }
+  background-color: #ead3b8;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  gap: 30px;
+}
 
-  .card {
-    background-color: #f4e4d4;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    width: 225px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    
-  }
+.card {
+  background-color: #f4e4d4;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 225px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;  
+}
 
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
 .card img {
   display: block;          /* transforma em bloco para poder usar margem automática */

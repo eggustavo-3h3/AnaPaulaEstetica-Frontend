@@ -1,5 +1,5 @@
  export interface Categoria {
     id?: number,
-    categoria: string
-    //adicionar a imagem futuramente
+    descricao: string,
+    categoriaImagem: string
  }

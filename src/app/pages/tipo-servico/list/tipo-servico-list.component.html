@@ -1,26 +1,11 @@
 <body>
+  @for (categoria of categorias; track $index) {
     <a routerLink="/coxinha" class="card">
-      <img src="assets/img/sobra.jpg" alt="SobrancelhaPersonalizada">
+      <img [src]="categoria.categoriaImagem">
       <div class="card-content">
-        <h3>Sobrancelha</h3>
+        <h3>{{ categoria.descricao }}</h3>
       </div>
-    </a>
-
-    <a href="https://exemplo2.com" class="card" target="_blank">
-      <img src="assets/img/maquii.jpg" alt="Imagem 2">
-      <div class="card-content">
-        <h3>Maquiagem</h3>
-      </div>
-    </a>
-
-    <a href="https://exemplo3.com" class="card" target="_blank">
-      <img src="assets/img/estetico.jpg" alt="Imagem 3">
-      <div class="card-content">
-        <h3>Procedimentos Esteticos</h3>
-      </div>
-    </a>
-    <div class="card-container">
-  
-</div>
+    </a>    
+  }  
 </body>
 <router-outlet></router-outlet>
