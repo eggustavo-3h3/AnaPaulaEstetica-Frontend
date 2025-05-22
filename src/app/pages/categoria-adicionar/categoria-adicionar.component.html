@@ -1,0 +1,30 @@
+<h3>Cadastro Serviços</h3>
+<hr>
+<form (ngSubmit)="Adicionar()">
+    <div class="row">
+<div class="col col-lg-9 col-md-9 col-sm-12">
+    <label class="form label">Nome</label>
+    <input class = "form-control" [(ngModel)]="procedimento.nome" name="nome"/>
+</div>
+<div class="col col-lg-3 col-md-3 col-sm-12">
+    <label class="form-label">Descricao</label>
+    <input class = "form-control" [(ngModel)]="procedimento.descricao" descricao="descricao"/>
+    </div>
+    <div class="col col-lg-3 col-md-3 col-sm-12">
+        <label class="form-label">Valor</label>
+        <input class = "form-control" [(ngModel)]="procedimento.descricaovalor" valor="valor"/>
+        </div>
+</div>
+<hr>
+<div class="center">
+<button class="mr-5 btn btn-danger">
+    <i class="bi bi-x-lg"></i>
+    Cancelar
+</button>
+<button class="btn btn-success" type="submit">
+    <i class="bi bi-check2"></i>
+    Confirmar
+</button>
+</div>
+</form>
+</form>

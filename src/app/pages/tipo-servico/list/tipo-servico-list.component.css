@@ -25,7 +25,7 @@ body {
 }
 
 .card img {
-  display: block;          /* transforma em bloco para poder usar margem automática */
+  display: flex;          /* transforma em bloco para poder usar margem automática */
   margin: 0 auto;          /* centraliza horizontalmente */
   width: 120px;
   height: 120px;
