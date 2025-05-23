@@ -4,13 +4,13 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f7eee7; /* Fundo bege claro */
+    background-color: #e5d0b9; /* Fundo bege claro */
     padding: 20px; /* Adiciona espaçamento interno */
   }
   
   /* Card de login */
   .register-card {
-    background-color: #fff; /* Fundo branco */
+    background-color: #f4ece4; /* Fundo branco */
     padding: 30px;
     border-radius: 10px; /* Bordas arredondadas */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -77,11 +77,11 @@
   
   .links a {
     font-size: 0.9rem;
-    color: #8c6a4f;
+    color: #CDB79E;
     text-decoration: none;
   }
   
   .links a:hover {
-    color: #6e503d;
+    color: #CDB79E;
     text-decoration: underline;
   }

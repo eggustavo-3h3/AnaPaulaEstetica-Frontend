@@ -4,7 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px;
-  background-color: #CDB79E; /* Fundo branco */
+  background-color: #e5d0b9; /* Fundo branco */
 }
 
 .header {
@@ -28,7 +28,7 @@
 /* Seção de informações */
 .info {
   flex: 1 1 300px;
-  background-color: #fdf4e3; /* Fundo bege claro */
+  background-color: #f4ece4; /* Fundo bege claro */
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,7 +52,7 @@
 /* Seção de contato */
 .contact {
   flex: 1 1 300px;
-  background-color: #fdf4e3; /* Fundo bege claro */
+  background-color: #f4ece4; /* Fundo bege claro */
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,7 +71,7 @@
 /* Seção de localização */
 .location {
   flex: 1 1 300px;
-  background-color: #fdf4e3; /* Fundo bege claro */
+  background-color: #f4ece4; /* Fundo bege claro */
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
