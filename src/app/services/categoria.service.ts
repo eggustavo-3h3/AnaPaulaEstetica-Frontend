@@ -23,5 +23,4 @@ export class categoriaService{
         return this.http.post<Categoria[]>(`${this.urlBase}/categoria/adicionar`, categoria)
     }
      
-    
 }

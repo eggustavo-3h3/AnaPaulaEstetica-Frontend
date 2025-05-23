@@ -1,0 +1,58 @@
+<div class="register-container">
+  <mat-card class="register-card">
+    <mat-card-title>Cadastro</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formUsuario" (ngSubmit)="onRegister()">
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Digite seu nome" type="text" formControlName="nome">
+          <mat-error *ngIf="submitted && f['nome'].errors?.['required']">
+            Nome é obrigatório.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email">
+          <mat-error *ngIf="submitted && f['email'].errors?.['required']">
+            Email é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="submitted && f['email'].errors?.['email']">
+            Email inválido.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" formControlName="senha">
+          <mat-error *ngIf="submitted && f['senha'].errors?.['required']">
+            Senha é obrigatória.
+          </mat-error>
+          <mat-error *ngIf="submitted && f['senha'].errors?.['minlength']">
+            Mínimo de 8 caracteres.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Confirme a Senha</mat-label>
+          <input matInput type="password" formControlName="confirmarSenha">
+          <mat-error *ngIf="submitted && f['confirmarSenha'].errors?.['required']">
+            Confirmação obrigatória.
+          </mat-error>
+          <mat-error *ngIf="submitted && formUsuario.errors?.['senhaNaoConfere']">
+            As senhas não coincidem.
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+
+        <div *ngIf="errorMessage">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
+      </form>
+
+      <a routerLink="/login">Já tem uma conta? Faça login</a>
+    </mat-card-content>
+  </mat-card>
+</div>
