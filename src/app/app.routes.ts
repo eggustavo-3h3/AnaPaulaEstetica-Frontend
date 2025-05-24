@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { PaginaSobrancelhasComponent } from './pages/pagina-sobrancelhas/pagina-sobrancelhas.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { EditarCategoriaComponent } from './pages/editar-categoria/editar-categoria.component';
+import { CadastroCategoriaComponent } from './pages/cadastro-categoria/cadastro-categoria.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,5 +16,7 @@ export const routes: Routes = [
   { path: 'sobre', component: SobreComponent }, //, canActivate: [AuthGuard]
   { path: 'servicos', component: PaginaSobrancelhasComponent },
   { path: 'cadastro', component: CadastrarComponent }, //, canActivate: [AuthGuard]
+  { path: 'cadastro-categoria', component: CadastroCategoriaComponent},
+  { path: 'editar-categoria', component: EditarCategoriaComponent},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];

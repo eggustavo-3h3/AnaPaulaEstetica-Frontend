@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-cadastrar',
   templateUrl: './cadastrar.component.html',
   styleUrls: ['./cadastrar.component.css'],
+  standalone: true,
   imports: [
     MatCardModule,
     MatInputModule,
