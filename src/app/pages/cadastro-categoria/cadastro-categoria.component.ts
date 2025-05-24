@@ -24,5 +24,16 @@ import { RouterModule } from '@angular/router';
   styleUrl: './cadastro-categoria.component.css'
 })
 export class CadastroCategoriaComponent {
+  previewUrl: string | ArrayBuffer | null = null;
 
+  onFileSelected(event: Event): void {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.previewUrl = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 }

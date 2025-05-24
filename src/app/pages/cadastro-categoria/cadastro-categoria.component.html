@@ -1,15 +1,34 @@
-<div class="container">
-    <mat-card class="card">
-        <mat-card-title>Cadastro de Categoria</mat-card-title>
+<div class="register-container">
+  <mat-card class="register-card">
+    <div class="image-upload-container" (click)="fileInput.click()">
+      <img *ngIf="previewUrl; else placeholder" [src]="previewUrl" class="profile-image" alt="Imagem da categoria">
+      <ng-template #placeholder>
+        <div class="profile-placeholder">
+          <span>+</span>
+        </div>
+      </ng-template>
+      <input #fileInput type="file" accept="image/*" hidden (change)="onFileSelected($event)">
+    </div>
+    <mat-card-title>Cadastro de Categoria</mat-card-title>
+    <mat-card-content>
+      <form>
         <mat-form-field class="full-width" appearance="fill">
-            <input matInput placeholder="Nome do Procedimento" type="text" formControlName="procedimento">
+          <mat-label>Nome do Procedimento</mat-label>
+          <input matInput placeholder="Digite o nome do procedimento" type="text">
         </mat-form-field>
+
         <mat-form-field class="full-width" appearance="fill">
-            <input matInput placeholder="Descrição" type="text" formControlName="descricao">
+          <mat-label>Descrição</mat-label>
+          <input matInput placeholder="Digite a descrição" type="text">
         </mat-form-field>
+
         <mat-form-field class="full-width" appearance="fill">
-            <input matInput placeholder="Valor R$" type="text" formControlName="valor">
+          <mat-label>Valor R$</mat-label>
+          <input matInput placeholder="Digite o valor" type="text">
         </mat-form-field>
-            <button mat-raised-button color="primary" type="submit">Adicionar</button>
-    </mat-card>
+
+        <button mat-raised-button color="primary" type="button">Adicionar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

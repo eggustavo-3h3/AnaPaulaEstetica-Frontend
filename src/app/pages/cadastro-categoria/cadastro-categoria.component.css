@@ -1,4 +1,5 @@
-.container {
+/* Container principal */
+.register-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,8 +7,9 @@
     background-color: #e5d0b9; /* Fundo bege claro */
     padding: 20px; /* Adiciona espaçamento interno */
   }
-
-.card {
+  
+  /* Card de cadastro */
+  .register-card {
     background-color: #f4ece4; /* Fundo branco */
     padding: 30px;
     border-radius: 10px; /* Bordas arredondadas */
@@ -16,7 +18,8 @@
     max-width: 400px;
     text-align: center;
   }
-
+  
+  /* Título do card */
   mat-card-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -49,7 +52,7 @@
     color: #c4a992; /* Cor do placeholder */
   }
   
-  /* Botão de login */
+  /* Botão */
   button[mat-raised-button] {
     width: 100%;
     padding: 10px;
@@ -81,4 +84,35 @@
   .links a:hover {
     color: #CDB79E;
     text-decoration: underline;
+  }
+  
+  /* Adicione ao final do arquivo CSS */
+  /* filepath: c:\Users\rafae\OneDrive\Área de Trabalho\front\AnaPaulaEstetica-Frontend\src\app\pages\cadastro-categoria\cadastro-categoria.component.css */
+  .image-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  
+  .profile-image,
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #e5d0b9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #c4a992;
+    border: 2px dashed #c4a992;
+    transition: border-color 0.3s;
+  }
+  
+  .image-upload-container:hover .profile-image,
+  .image-upload-container:hover .profile-placeholder {
+    border-color: #8c6a4f;
   }
