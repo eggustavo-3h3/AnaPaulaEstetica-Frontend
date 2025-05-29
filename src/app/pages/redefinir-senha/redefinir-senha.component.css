@@ -1,0 +1,87 @@
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e5d0b9; /* Fundo bege claro */
+    padding: 20px; /* Adiciona espaçamento interno */
+  }
+  
+  /* Card de login */
+  .card {
+    background-color: #f4ece4; /* Fundo branco */
+    padding: 30px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Título do card */
+  mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8c6a4f; /* Cor do texto */
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  mat-form-field .mat-form-field-wrapper {
+    border-radius: 25px; /* Bordas arredondadas */
+    background-color: #fdfdfd; /* Fundo claro */
+    border: 1px solid #e6d5c3; /* Borda suave */
+    padding: 5px 10px;
+  }
+  
+  mat-form-field .mat-form-field-wrapper:hover {
+    border-color: #c4a992; /* Cor da borda ao passar o mouse */
+  }
+  
+  mat-form-field input {
+    color: #8c6a4f; /* Cor do texto */
+  }
+  
+  mat-form-field input::placeholder {
+    color: #c4a992; /* Cor do placeholder */
+  }
+  
+  /* Botão de login */
+  button[mat-raised-button] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8c6a4f; /* Cor do botão */
+    color: #fff;
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[mat-raised-button]:hover {
+    background-color: #6e503d; /* Cor ao passar o mouse */
+  }
+  
+  /* Links */
+  .links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links a {
+    font-size: 0.9rem;
+    color: #CDB79E;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    color: #CDB79E;
+    text-decoration: underline;
+  }

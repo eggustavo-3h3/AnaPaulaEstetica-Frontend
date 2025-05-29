@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card class="card">
+      <mat-card-title>Redefinir Senha</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nova Senha</mat-label>
+            <input matInput [(ngModel)]="teste1" name="username" required>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Confirme sua Senha</mat-label>
+            <input matInput [(ngModel)]="teste" name="password" type="password" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Redefinir</button>
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>
