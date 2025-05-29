@@ -1,4 +1,33 @@
-<mat-card class="card">
+<div class="agendamento-container">
+  <!-- Horários -->
+  <div class="horarios">
+    <div class="horarios-list">
+      <button mat-raised-button color="primary" class="horario-btn">13:00</button>
+      <button mat-raised-button color="primary" class="horario-btn">13:30</button>
+      <button mat-raised-button color="primary" class="horario-btn">14:00</button>
+      <button mat-raised-button color="primary" class="horario-btn">14:30</button>
+    </div>
+  </div>
+
+  <!-- Calendário -->
+  <mat-card class="card calendario-card">
     <mat-calendar [(selected)]="selected"></mat-calendar>
-</mat-card>
-<p class="test">Selected date: {{selected()}}</p>
+  </mat-card>
+
+  <!-- Serviços Agendados -->
+  <mat-card class="servicos-card">
+    <div class="servicos-title">SERVIÇOS AGENDADO</div>
+    <div class="servico">Limpeza de pele</div>
+    <div class="servico">Massagem corporal</div>
+    <div class="servicos-title">TEMPO DE SERVIÇO</div>
+    <div class="tempo-servico">
+      <mat-icon class="icon-tempo">schedule</mat-icon>
+      <span class="tempo-badge">1 hora</span>
+    </div>
+    <div class="valor">R$120,00</div>
+    <div class="botoes-servicos">
+      <button mat-raised-button color="primary" class="btn-add">Adicionar Serviços</button>
+      <button mat-raised-button color="accent" class="btn-finalizar">Agendar e Finalizar</button>
+    </div>
+  </mat-card>
+</div>
