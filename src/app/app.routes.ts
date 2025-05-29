@@ -12,6 +12,7 @@ import { AdmAgendamentoComponent } from './pages/adm-agendamento/adm-agendamento
 import { AdmCategoriaComponent } from './pages/adm-categoria/adm-categoria.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
 import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,5 +27,6 @@ export const routes: Routes = [
   { path: 'adm-categoria', component: AdmCategoriaComponent},
   { path: 'agendamento', component: AgendamentoComponent},
   { path: 'redefinir-senha', component: RedefinirSenhaComponent},
+  {path: 'perfil-usuario', component: PerfilUsuarioComponent},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];

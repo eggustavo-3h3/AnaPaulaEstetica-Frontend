@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9d4bb;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    background-color: #e2c7a9;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    margin-right: 20px;
+  }
+  
+  .profile-pic {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .circle {
+    width: 130px;
+    height: 130px;
+    background-color: #f0e8df;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .camera-icon {
+    margin-top: -25px;
+    font-size: 20px;
+  }
+  
+  .profile-pic h2 {
+    color: gray;
+  }
+  
+  .dados-pessoais h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+   text-align: center;
+  }
+  
+  .agendamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+  }
+  
+  .agendamento {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .agendamento h3 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  
+  .agendamento .hora {
+    background-color: #f4d6bc;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .agendamento button {
+    margin-top: 15px;
+    background-color: #f4d6bc;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
