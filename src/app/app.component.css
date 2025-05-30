@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   height: 100%; /* Garante que ocupem 100% da altura da tela */
   overflow-x: hidden; /* Evita rolagem horizontal */
-  background-color: #F7EEE7;;
+  background-color: #F7EEE7;
 }
 
 /* Container principal para ocupar toda a altura */
@@ -12,6 +12,7 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
+  color: black;
 }
 
 /* Conteúdo principal */

@@ -13,6 +13,8 @@ import { AdmCategoriaComponent } from './pages/adm-categoria/adm-categoria.compo
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
 import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { CadastroServicoComponent } from './pages/cadastro-servico/cadastro-servico.component';
+import { ServicoAtualizarComponent } from './pages/servico-atualizar/servico-atualizar.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,10 +25,12 @@ export const routes: Routes = [
   { path: 'cadastro', component: CadastrarComponent }, //, canActivate: [AuthGuard]
   { path: 'cadastro-categoria', component: CadastroCategoriaComponent},
   { path: 'categoria-atualizar', component: CategoriaAtualizarComponent},
+  { path: 'cadastro-servico', component: CadastroServicoComponent},
+  { path: 'servico-atualizar', component: ServicoAtualizarComponent},
   { path: 'adm-agendamento', component: AdmAgendamentoComponent},
   { path: 'adm-categoria', component: AdmCategoriaComponent},
   { path: 'agendamento', component: AgendamentoComponent},
   { path: 'redefinir-senha', component: RedefinirSenhaComponent},
-  {path: 'perfil-usuario', component: PerfilUsuarioComponent},
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];
