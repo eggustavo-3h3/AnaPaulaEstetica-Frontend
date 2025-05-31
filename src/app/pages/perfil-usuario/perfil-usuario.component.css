@@ -96,3 +96,61 @@ body {
     font-weight: bold;
     color: white; /* Mantém o texto do botão claro */
   }
+
+  @media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px;
+    max-width: 400px;
+  }
+  .agendamentos-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .container {
+    padding: 4px;
+  }
+  .sidebar {
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+  .profile-pic .circle {
+    width: 90px;
+    height: 90px;
+  }
+  .agendamentos-grid {
+    gap: 10px;
+    padding: 0;
+  }
+  .agendamento {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .dados-pessoais h3 {
+    font-size: 18px;
+  }
+  .agendamento h3 {
+    font-size: 16px;
+  }
+  .agendamento .hora {
+    font-size: 14px;
+    padding: 3px 8px;
+  }
+  .agendamento button {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+}

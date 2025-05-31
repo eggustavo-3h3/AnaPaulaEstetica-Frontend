@@ -1,5 +1,4 @@
 .admin-container {
-  background: #f7ede5;
   min-height: 100vh;
   padding: 20px;
 }
@@ -7,14 +6,14 @@
 .admin-title {
   text-align: center;
   font-weight: bold;
-  color: #b8a89a;
+  color: black;
   font-size: 1.5rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
 .admin-card {
-  background: #edd7c1;
+  background: #a18578;
   border-radius: 15px;
   max-width: 1000px;
   margin: 0 auto;
@@ -33,28 +32,77 @@
 }
 
 .admin-table thead {
-  background:  #edd7c1;
-  color:#816958;
+  background:  #a18578;
+  color:#000000;
 }
 
 .beige-row {
-  background: #e5d0b9;
-  color: #8c6a4f;
+  background: #a18578;
+  color: black;
 }
 
 .white-row {
   background: #fff8f3;
-  color: #6e503d;
+  color: black;
 }
 
 .actions a {
-  color: #8c6a4f;
+  color: #000000;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
 }
 
 .actions a:hover {
-  color: #8c6a4f;
   text-decoration: underline;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 900px) {
+  .admin-card {
+    padding: 10px;
+    max-width: 100%;
+  }
+  .admin-table th, .admin-table td {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .admin-card {
+    padding: 4px;
+  }
+  .admin-table, .admin-table thead, .admin-table tbody, .admin-table tr, .admin-table th, .admin-table td {
+    display: block;
+    width: 100%;
+  }
+  .admin-table thead {
+    display: none;
+  }
+  .admin-table tr {
+    margin-bottom: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #fff8f3;
+    padding: 10px 0;
+  }
+  .admin-table td {
+    text-align: left;
+    padding: 8px 12px;
+    position: relative;
+    font-size: 0.98rem;
+  }
+  .admin-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #b8a89a;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .actions {
+    margin-top: 8px;
+  }
 }

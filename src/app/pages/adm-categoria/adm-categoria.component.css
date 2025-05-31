@@ -1,61 +1,115 @@
 .admin-container {
-  background: #f7ede5;
   min-height: 100vh;
-  padding: 0;
+  padding: 20px;
 }
 
 .admin-title {
   text-align: center;
   font-weight: bold;
-  color: #b8a89a;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  color: black;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
 .admin-card {
-  background: #edd7c1;
-  border-radius: 25px;
-  max-width: 900px;
+  background: #a18578;
+  border-radius: 15px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 24px 0 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: 20px;
 }
 
-.admin-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  font-size: 1.1rem;
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+  text-align: center;
+}
+
+.admin-table thead {
+  background: #a18578;
+  color: #000000;
+}
+
+.beige-row {
+  background: #a18578;
+  color: black;
 }
 
 .white-row {
   background: #fff8f3;
-  color: #8c6a4f;
-}
-
-.beige-row {
-  background: #e5d0b9;
-  color: #c4a992;
-}
-
-.actions {
-  display: flex;
-  gap: 16px;
+  color: black;
 }
 
 .actions a {
-  color: #8c6a4f;
+  color: #000000;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
 }
 
 .actions a:hover {
-  color: #6e503d;
   text-decoration: underline;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 900px) {
+  .admin-card {
+    padding: 10px;
+    max-width: 100%;
+  }
+  .admin-table th,
+  .admin-table td {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .admin-card {
+    padding: 4px;
+  }
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table th,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+  .admin-table thead {
+    display: none;
+  }
+  .admin-table tr {
+    margin-bottom: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: #fff8f3;
+    padding: 10px 0;
+  }
+  .admin-table td {
+    text-align: left;
+    padding: 8px 12px;
+    position: relative;
+    font-size: 0.98rem;
+  }
+  .admin-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #b8a89a;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .actions {
+    margin-top: 8px;
+  }
 }

@@ -143,3 +143,57 @@ body {
   padding: 16px 32px;
 }
 
+/* Responsividade para telas menores */
+@media (max-width: 1100px) {
+  .agendamento-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .calendario-card,
+  .servicos-card {
+    width: 100%;
+    min-width: unset;
+    max-width: 480px;
+  }
+  .horarios {
+    min-width: unset;
+    width: 100%;
+    align-items: center;
+  }
+  .horarios-list {
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .agendamento-container {
+    padding: 0 8px;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .calendario-card,
+  .servicos-card {
+    padding: 16px;
+    max-width: 100%;
+  }
+  .servicos-card {
+    border-radius: 16px;
+  }
+  .horarios-list {
+    gap: 12px;
+  }
+  .horario-btn {
+    min-width: 80px;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  .btn-add,
+  .btn-finalizar {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+}
