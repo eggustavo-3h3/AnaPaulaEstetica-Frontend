@@ -2,7 +2,12 @@
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: rgb(var(--bs-tertiary-color-rgb));
+  color: #111;
+  background-color: #F7EEE7; 
+}
+
+.color-secundary{
+  color: gray;
 }
 
 /* Carousel */
@@ -16,7 +21,6 @@ body {
   width: 75%; /* Garante que a imagem ocupe toda a largura da coluna */
   max-width: 950px; /* Define um tamanho máximo para a largura */
   height: 600px; /* Define uma altura fixa */
-  width: 650px;
   object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente para caber no espaço */
   border-radius: 8px; /* Adiciona bordas arredondadas */
   margin: 0 auto; /* Centraliza a imagem horizontalmente */

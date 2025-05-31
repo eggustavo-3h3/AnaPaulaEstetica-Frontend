@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   height: 100%; /* Garante que ocupem 100% da altura da tela */
   overflow-x: hidden; /* Evita rolagem horizontal */
-  background-color: #F7EEE7;
+  background-color: #EAD3B8;
 }
 
 /* Container principal para ocupar toda a altura */
