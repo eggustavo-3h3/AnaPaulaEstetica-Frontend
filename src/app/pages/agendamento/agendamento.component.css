@@ -18,7 +18,8 @@ body {
 }
 .agendamento-container {
   display: flex;
-  gap: 64px;
+  flex-wrap: wrap;
+  gap: 48px;
   align-items: flex-start;
   justify-content: center;
   max-width: 1600px;
@@ -30,25 +31,36 @@ body {
   flex: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  min-width: 340px;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  padding-top: 12px;
 }
 
 .horarios-list {
-  display: flex;
-  gap: 48px;
-  margin-bottom: 48px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;   /* Espaço horizontal entre botões */
+  row-gap: 18px;      /* Espaço vertical entre linhas */
+  width: 100%;
+  justify-items: center;
 }
 
 .horario-btn {
-  border-radius: 50%;
-  min-width: 120px;
-  min-height: 64px;
-  font-size: 1.5rem;
-  background: #F7EEE7 !important;
-  color:#8C6A4F !important;
+  border-radius: 24px;
+  min-width: 70px;
+  min-height: 38px;
+  font-size: 1.1rem;
+  background: #f7eee7 !important;
+  color: #8C6A4F !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  margin: 0;
+  padding: 0 18px;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendario-card {
@@ -163,9 +175,33 @@ body {
     align-items: center;
   }
   .horarios-list {
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 14px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .agendamento-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .calendario-card,
+  .servicos-card {
+    width: 100%;
+    min-width: unset;
+    max-width: 480px;
+  }
+  .horarios {
+    min-width: unset;
+    width: 100%;
+    align-items: center;
+  }
+  .horarios-list {
+    gap: 12px;
   }
 }
 
@@ -177,23 +213,21 @@ body {
   }
   .calendario-card,
   .servicos-card {
-    padding: 16px;
+    padding: 12px;
     max-width: 100%;
   }
   .servicos-card {
-    border-radius: 16px;
+    border-radius: 12px;
   }
   .horarios-list {
-    gap: 12px;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 10px;
   }
   .horario-btn {
-    min-width: 80px;
-    min-height: 48px;
+    min-width: 70px;
+    min-height: 32px;
     font-size: 1rem;
-  }
-  .btn-add,
-  .btn-finalizar {
-    font-size: 1rem;
-    padding: 10px 12px;
+    padding: 0 12px;
   }
 }

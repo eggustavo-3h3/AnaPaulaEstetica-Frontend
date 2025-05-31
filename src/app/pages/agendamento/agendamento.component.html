@@ -1,18 +1,20 @@
 <body>
 <div class="agendamento-container">
-  <!-- Horários -->
+ <!-- Horários -->
   <div class="horarios">
     <div class="horarios-list">
-      <button mat-raised-button color="primary" class="horario-btn">13:00</button>
-      <button mat-raised-button color="primary" class="horario-btn">13:30</button>
-      <button mat-raised-button color="primary" class="horario-btn">14:00</button>
-      <button mat-raised-button color="primary" class="horario-btn">14:30</button>
+      @for (horario of horarios; track $index) {
+        <button mat-raised-button color="primary" class="horario-btn">
+          {{ horario.horario }}
+        </button>
+      }
     </div>
   </div>
+ 
 
   <!-- Calendário -->
   <mat-card class="card calendario-card">
-    <mat-calendar [(selected)]="selected"></mat-calendar>
+    <mat-calendar [(selected)]="selected" (selectedChange)="onDateChange($event)"></mat-calendar>
   </mat-card>
 
   <!-- Serviços Agendados -->
