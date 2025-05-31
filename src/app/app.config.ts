@@ -1,5 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection } from '@angular/core';
 import { RouterModule, provideRouter } from '@angular/router';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -13,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { authInterceptor } from './interceptors/auth.interceptor';
 
+registerLocaleData(localePt);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([authInterceptor])
     ),
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
     MatSnackBarModule,
     MatButtonModule,
     MatInputModule,

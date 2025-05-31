@@ -21,7 +21,7 @@ export const routes: Routes = [
   { path: 'tipo-servico/listar', component: TipoServicoListComponent }, //, canActivate: [AuthGuard] 
   { path: 'home', component: HomeComponent },
   { path: 'sobre', component: SobreComponent }, //, canActivate: [AuthGuard]
-  { path: 'servicos', component: ServicosComponent },
+  { path: 'servicos/:id', component: ServicosComponent },
   { path: 'cadastro', component: CadastrarComponent }, //, canActivate: [AuthGuard]
   { path: 'cadastro-categoria', component: CadastroCategoriaComponent},
   { path: 'categoria-atualizar', component: CategoriaAtualizarComponent},

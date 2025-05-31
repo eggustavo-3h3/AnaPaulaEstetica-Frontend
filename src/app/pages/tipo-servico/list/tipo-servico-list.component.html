@@ -1,6 +1,6 @@
 <body>
   @for (categoria of categorias; track $index) {
-    <a routerLink="/servicos" class="card">
+    <a [routerLink]="['/servicos', categoria.id]" class="card">
       <img [src]="categoria.categoriaImagem">
       <div class="card-content">
         <h3>{{ categoria.descricao }}</h3>
