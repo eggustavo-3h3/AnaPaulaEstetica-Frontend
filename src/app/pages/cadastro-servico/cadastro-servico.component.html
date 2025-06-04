@@ -1,7 +1,7 @@
 <div class="register-container">
   <mat-card class="register-card">
     <div class="image-upload-container" (click)="fileInput.click()">
-      <img *ngIf="previewUrl; else placeholder" [src]="previewUrl" class="profile-image" alt="Imagem da categoria">
+      <img *ngIf="previewUrl; else placeholder" [src]="previewUrl" class="profile-image" alt="Imagem do serviço">
       <ng-template #placeholder>
         <div class="profile-placeholder">
           <span>+</span>
@@ -11,30 +11,39 @@
     </div>
     <mat-card-title>Cadastro de Serviço</mat-card-title>
     <mat-card-content>
-      <form>
+      <form [formGroup]="formServico" (ngSubmit)="onSubmit()">
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Descrição</mat-label>
-          <input matInput placeholder="Digite a descrição" type="text">
+          <input matInput placeholder="Digite a descrição" type="text" formControlName="descricao">
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Duração do serviço</mat-label>
-            <mat-select>
-                <mat-option value="30min">30 Minutos</mat-option>
-                <mat-option value="1H">1 Hora</mat-option>
-                <mat-option value="1H30Min">1 Hora e 30 Minutos</mat-option>
-                <mat-option value="2H">2 Horas</mat-option>
-            </mat-select>
+          <mat-label>Duração do serviço</mat-label>
+          <mat-select formControlName="tempo">
+            <mat-option [value]="30">30 Minutos</mat-option>
+            <mat-option [value]="60">1 Hora</mat-option>
+            <mat-option [value]="90">1 Hora e 30 Minutos</mat-option>
+            <mat-option [value]="120">2 Horas</mat-option>
+          </mat-select>
         </mat-form-field>
         
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Valor R$</mat-label>
-          <input matInput placeholder="Digite o valor" type="text">
+          <input matInput placeholder="Digite o valor" type="number" formControlName="preco">
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="button">Adicionar</button>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Categoria</mat-label>
+          <mat-select formControlName="categoriaId">
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+              {{ categoria.descricao }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Adicionar</button>
       </form>
     </mat-card-content>
   </mat-card>

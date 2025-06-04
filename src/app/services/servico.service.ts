@@ -15,4 +15,9 @@ export class ServicoService {
     listarPorCategoria(id: string): Observable<any> {
         return this.http.get<any[]>(`${this.urlBase}/produto/listar-por-categoria/${id}`);
     }
+
+    adicionarServico(servico: any): Observable<any> {
+        // Método para adicionar um novo serviço/produto
+        return this.http.post<any>(`${this.urlBase}/produto/adicionar`, servico);
+    }
 }

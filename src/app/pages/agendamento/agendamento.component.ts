@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HorarioService } from '../../services/horario.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agendamento',
@@ -27,15 +28,16 @@ export class AgendamentoComponent implements OnInit {
   horarios: any[] = [];
 
   constructor(
-    private route: ActivatedRoute,
-    private horarioService: HorarioService
+    private horarioService: HorarioService,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<AgendamentoComponent>
   ) { }
 
   ngOnInit(): void {
-    const data = this.route.snapshot.paramMap.get('data');
-    if (data) {
-      this.listarHorariosPorData(data);
-    }
+    // Se quiser carregar horários ao abrir, pode usar a data atual
+    const hoje = new Date();
+    this.selected = hoje;
+    this.listarHorariosPorData(this.formatarData(hoje));
   }
 
   onDateChange(date: Date) {

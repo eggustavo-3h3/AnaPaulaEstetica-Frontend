@@ -1,6 +1,19 @@
-<body>
-<div class="agendamento-container">
- <!-- Horários -->
+<div class="agendamento-row">
+  <!-- Info produto -->
+  <div class="servicos-card">
+    <div class="servicos-info-row">
+      <div class="servicos-title">{{ data?.servico?.descricao }}</div>
+      <div class="tempo-servico">
+        <span class="icon-tempo">⏱️</span>
+        <span class="tempo-badge">{{ data?.servico?.tempo }} min</span>
+      </div>
+      <div class="valor">
+        {{ data?.servico?.preco | currency:'BRL' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Horários -->
   <div class="horarios">
     <div class="horarios-list">
       @for (horario of horarios; track $index) {
@@ -10,28 +23,13 @@
       }
     </div>
   </div>
- 
 
   <!-- Calendário -->
   <mat-card class="card calendario-card">
     <mat-calendar [(selected)]="selected" (selectedChange)="onDateChange($event)"></mat-calendar>
-  </mat-card>
-
-  <!-- Serviços Agendados -->
-  <mat-card class="servicos-card">
-    <div class="servicos-title">SERVIÇOS AGENDADO</div>
-    <div class="servico">Limpeza de pele</div>
-    <div class="servico">Massagem corporal</div>
-    <div class="servicos-title">TEMPO DE SERVIÇO</div>
-    <div class="tempo-servico">
-      <mat-icon class="icon-tempo">schedule</mat-icon>
-      <span class="tempo-badge">1 hora</span>
-    </div>
-    <div class="valor">R$120,00</div>
     <div class="botoes-servicos">
       <button mat-raised-button color="primary" class="btn-add">Adicionar Serviços</button>
       <button mat-raised-button color="accent" class="btn-finalizar">Agendar e Finalizar</button>
     </div>
   </mat-card>
 </div>
-</body>

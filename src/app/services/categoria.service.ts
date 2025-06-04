@@ -23,4 +23,8 @@ export class categoriaService{
         return this.http.post<Categoria[]>(`${this.urlBase}/categoria/adicionar`, categoria)
     }
      
+    atualizarCategoria(categoria: any) {
+        // Método para atualizar uma Categoria
+        return this.http.put(`${this.urlBase}/categoria/atualizar`, categoria);
+    }   
 }
