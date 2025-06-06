@@ -27,4 +27,8 @@ export class categoriaService{
         // Método para atualizar uma Categoria
         return this.http.put(`${this.urlBase}/categoria/atualizar`, categoria);
     }   
+
+    deletarCategoria(id: string) {
+        return this.http.delete(`${this.urlBase}/categoria/deletar/${id}`);
+    }
 }

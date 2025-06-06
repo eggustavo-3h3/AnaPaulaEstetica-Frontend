@@ -29,5 +29,7 @@ export class ServicoService {
         return this.http.put<any>(`${this.urlBase}/produto/atualizar`, servico);
     }
 
-    
+    deletarServico(id: string) {
+        return this.http.delete(`${this.urlBase}/produto/deletar/${id}`);
+    }
 }

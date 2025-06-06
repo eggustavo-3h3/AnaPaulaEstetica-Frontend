@@ -5,8 +5,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HorarioService } from '../../services/horario.service';
+import { AgendamentoService } from '../../services/agendamento.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -26,41 +27,76 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AgendamentoComponent implements OnInit {
   selected: Date | null = null;
   horarios: any[] = [];
+  horarioSelecionado: string = '';
 
   constructor(
     private horarioService: HorarioService,
+    private agendamentoService: AgendamentoService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public dialogRef: MatDialogRef<AgendamentoComponent>
+    public dialogRef: MatDialogRef<AgendamentoComponent>,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    // Se quiser carregar horários ao abrir, pode usar a data atual
     const hoje = new Date();
     this.selected = hoje;
-    this.listarHorariosPorData(this.formatarData(hoje));
+    const dataFormatada = this.formatarDataParaBusca(hoje);
+    console.log('Abrindo modal para produtoId:', this.data.servico.id, 'data:', dataFormatada);
+    this.listarHorariosPorData(dataFormatada);
   }
 
   onDateChange(date: Date) {
     this.selected = date;
-    const dataFormatada = this.formatarData(date);
+    const dataFormatada = this.formatarDataParaBusca(date);
     this.listarHorariosPorData(dataFormatada);
   }
 
-  formatarData(date: Date): string {
+  formatarDataParaBusca(date: Date): string {
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`; // MM/DD/YYYY
+  }
+
+  formatarDataParaAgendamento(date: Date): string {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return `${year}-${month}-${day}`; // YYYY-MM-DD
   }
 
   listarHorariosPorData(data: string): void {
-    this.horarioService.listarHorariosPorData(data).subscribe({
-      next: (data) => {
-        this.horarios = data;
+    this.horarioService.listarHorariosDisponiveis(data).subscribe({
+      next: (horarios) => {
+        console.log('Horários recebidos:', horarios);
+        this.horarios = horarios;
       },
       error: (error) => {
-        console.error('Error fetching available times:', error);
+        console.error('Erro ao buscar horários disponíveis:', error);
       }
     });
+  }
+
+  agendarEFinalizar() {
+    if (!this.horarioSelecionado) {
+      alert('Selecione um horário!');
+      return;
+    }
+    const agendamento = {
+      produtoId: this.data.servico.id,
+      data: this.formatarDataParaAgendamento(this.selected!),
+      hora: this.horarioSelecionado
+    };
+    console.log('Agendando:', agendamento);
+
+    this.agendamentoService.agendar(agendamento).toPromise()
+      .then(() => {
+        this.dialogRef.close();
+        this.router.navigate(['/meus-agendamentos']);
+      })
+      .catch((err) => {
+        console.error('Erro ao agendar:', err);
+        alert('Erro ao agendar!');
+      });
   }
 }

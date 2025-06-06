@@ -141,6 +141,13 @@ body, :host {
   justify-content: center;
 }
 
+.horario-btn.selected {
+  background-color: #795548 !important; /* cor de destaque */
+  color: #fff !important;
+  border: 2px solid #5d4037;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
 .calendario-card {
   min-width: 480px;
   max-width: 600px;
@@ -242,4 +249,15 @@ body, :host {
 
 ::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
   border-color: black !important;
+}
+
+.servico-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

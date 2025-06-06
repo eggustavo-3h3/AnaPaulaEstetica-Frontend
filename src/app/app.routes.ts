@@ -15,6 +15,7 @@ import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { CadastroServicoComponent } from './pages/cadastro-servico/cadastro-servico.component';
 import { ServicoAtualizarComponent } from './pages/atualizar-servico/atualizar-servico.component';
+import { DeletarComponent } from './pages/deletar/deletar.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -32,5 +33,6 @@ export const routes: Routes = [
   { path: 'agendamento', component: AgendamentoComponent},
   { path: 'redefinir-senha', component: RedefinirSenhaComponent},
   { path: 'perfil-usuario', component: PerfilUsuarioComponent},
+  { path: 'deletar/:id', component: DeletarComponent},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];

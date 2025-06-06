@@ -1,68 +1,24 @@
 <div class="admin-container">
   <div class="admin-title">Categorias e Serviços</div>
+  <div style="text-align:right; margin-bottom: 16px;">
+    <select [(ngModel)]="tipoSelecionado">
+      <option value="categoria">Categorias</option>
+      <option value="servico">Serviços</option>
+    </select>
+  </div>
   <div class="admin-card">
     <table class="admin-table">
       <thead>
         <tr>
-          <th>Categoria/Serviço</th>
+          <th>{{ tipoSelecionado === 'categoria' ? 'Categoria' : 'Serviço' }}</th>
           <th>Ações</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="white-row">
-          <td data-label="Categoria/Serviço">Maquiagem Social</td>
+        <tr *ngFor="let item of itensFiltrados(); let i = index" [ngClass]="i % 2 === 0 ? 'white-row' : 'beige-row'">
+          <td data-label="Categoria/Serviço">{{ getNome(item) }}</td>
           <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Categoria/Serviço">Desiging Sobrancelha</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Categoria/Serviço">Design de sobrancelha + coloração</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Categoria/Serviço">Design de sobrancelha + henna</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Categoria/Serviço">Massagem corporal</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Categoria/Serviço">Peeling</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Categoria/Serviço">Limpeza de pele</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Categoria/Serviço">Micropigmentação</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Remover</a>
-            <a href="#">Editar</a>
+            <a [routerLink]="['/deletar', item.id]" [queryParams]="{ tipo: tipoSelecionado }">Deletar</a>
           </td>
         </tr>
       </tbody>

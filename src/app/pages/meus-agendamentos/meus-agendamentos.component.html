@@ -1,0 +1,11 @@
+<div class="meus-agendamentos-container">
+  <h2>Meus Agendamentos</h2>
+  <div *ngIf="agendamentos.length === 0">Nenhum agendamento encontrado.</div>
+  <ul>
+    <li *ngFor="let agendamento of agendamentos">
+      Serviço: {{ agendamento.produtoDescricao }}<br>
+      Data: {{ agendamento.data }}<br>
+      Hora: {{ agendamento.hora }}
+    </li>
+  </ul>
+</div>
