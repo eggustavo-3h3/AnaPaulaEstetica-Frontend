@@ -2,7 +2,7 @@
   <div class="container">
     @for (servico of servicos; track $index) {
       <a href="#" class="card" (click)="openAgendamentoModal(servico); $event.preventDefault()">
-        <img [src]="servico.produtoImagens[0].imagem" alt="Imagem 2">
+        <img [src]="servico.imagem" alt="Imagem 2">
         <div class="card-content">
           <h3>{{ servico.descricao }}</h3>
         </div>

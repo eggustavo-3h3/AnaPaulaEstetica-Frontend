@@ -20,4 +20,14 @@ export class ServicoService {
         // Método para adicionar um novo serviço/produto
         return this.http.post<any>(`${this.urlBase}/produto/adicionar`, servico);
     }
+
+    listarServicos(): Observable<any[]> {
+        return this.http.get<any[]>(`${this.urlBase}/produto/listar`);
+    }
+
+    atualizarServico(servico: any): Observable<any> {
+        return this.http.put<any>(`${this.urlBase}/produto/atualizar`, servico);
+    }
+
+    
 }

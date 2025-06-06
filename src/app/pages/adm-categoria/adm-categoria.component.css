@@ -13,7 +13,7 @@
 }
 
 .admin-card {
-  background: #a18578;
+  background: #F7EEE7;
   border-radius: 15px;
   max-width: 1000px;
   margin: 0 auto;
@@ -33,12 +33,12 @@
 }
 
 .admin-table thead {
-  background: #a18578;
+  background:#EAD3B8;
   color: #000000;
 }
 
 .beige-row {
-  background: #a18578;
+  background: #EAD3B8;
   color: black;
 }
 

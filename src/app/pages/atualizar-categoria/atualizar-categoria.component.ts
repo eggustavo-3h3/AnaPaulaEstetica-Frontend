@@ -11,7 +11,7 @@ import { categoriaService } from '../../services/categoria.service';
 import { MatOption, MatSelectModule, MatSelectChange } from '@angular/material/select';
 
 @Component({
-  selector: 'app-categoria-atualizar',
+  selector: 'app-atualizar-categoria',
   standalone: true,
   imports: [
     MatCardModule,
@@ -25,8 +25,8 @@ import { MatOption, MatSelectModule, MatSelectChange } from '@angular/material/s
     MatSelectModule,
     MatOption
   ],
-  templateUrl: './categoria-atualizar.component.html',
-  styleUrl: './categoria-atualizar.component.css'
+  templateUrl: './atualizar-categoria.component.html',
+  styleUrl: './atualizar-categoria.component.css'
 })
 export class CategoriaAtualizarComponent implements OnInit {
   formCategoria: FormGroup;

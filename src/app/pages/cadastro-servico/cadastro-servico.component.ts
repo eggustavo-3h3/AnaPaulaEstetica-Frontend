@@ -89,10 +89,8 @@ export class CadastroServicoComponent implements OnInit {
       tempo: this.formServico.value.tempo,
       preco: this.formServico.value.preco,
       categoriaId: this.formServico.value.categoriaId,
-      imagens: [
-        { imagem: this.selectedFileBase64 }
-      ]
-    };
+      imagem: this.selectedFileBase64 
+      };
 
     this.servicoService.adicionarServico(servico).subscribe({
       next: () => {

@@ -34,6 +34,7 @@ export class ServicosComponent implements OnInit {
     this.servicoService.listarPorCategoria(id).subscribe({
       next: (data) => {
         this.servicos = data;
+        console.log(data)
       },
       error: (error) => {
         console.error('Error fetching categories:', error);
