@@ -16,6 +16,8 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.co
 import { CadastroServicoComponent } from './pages/cadastro-servico/cadastro-servico.component';
 import { ServicoAtualizarComponent } from './pages/atualizar-servico/atualizar-servico.component';
 import { DeletarComponent } from './pages/deletar/deletar.component';
+import { MeusAgendamentosComponent } from './pages/meus-agendamentos/meus-agendamentos.component';
+import { AtualizarPerfilComponent } from './pages/atualizar-perfil/atualizar-perfil.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,5 +36,7 @@ export const routes: Routes = [
   { path: 'redefinir-senha', component: RedefinirSenhaComponent},
   { path: 'perfil-usuario', component: PerfilUsuarioComponent},
   { path: 'deletar/:id', component: DeletarComponent},
+  { path: 'meus-agendamentos', component: MeusAgendamentosComponent},
+  { path: 'atualizar-perfil', component: AtualizarPerfilComponent},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];

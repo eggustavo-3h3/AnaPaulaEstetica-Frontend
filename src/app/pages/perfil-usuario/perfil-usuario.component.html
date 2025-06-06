@@ -1,62 +1,18 @@
 <body>
-  <div class="container">
+  <div class="container" *ngIf="usuario">
     <div class="sidebar">
       <div class="profile-pic">
         <div class="circle"></div>
         <div class="camera-icon">📷</div>
-        <h2>Rafael</h2>
+        <h2>{{ usuario.nome }}</h2>
       </div>
       <div class="dados-pessoais">
         <h3>Dados Pessoais</h3>
-        <p><strong>Nome:</strong> Rafael Ferrari</p>
+        <p><strong>Nome:</strong> {{ usuario.nome }}</p>
         <br>
-        <p><strong>E-mail:</strong> rafaelferrarifilho1234&#64;gmail.com</p>
+        <p><strong>E-mail:</strong> {{ usuario.email }}</p>
         <br>
-        <p><strong>Celular:</strong> (16) 99616-5455</p>
-      </div>
-    </div>
-
-    <div class="agendamentos-grid">
-      <!-- Repetido 4 vezes -->
-      <div class="agendamento">
-        <h3>Agendamentos</h3>
-        <p class="hora">13:00</p>
-        <p>Terça-feira, 1 de julho 2025</p>
-        <p><strong>Procedimento:</strong> Design da Sobrancelha</p>
-        <p><strong>Duração:</strong> 30 minutos</p>
-        <p><strong>Finalização:</strong> 13:30Hrs</p>
-        <button>Cancelar Agendamento</button>
-      </div>
-
-      <!-- Repita esse bloco mais 3 vezes -->
-      <div class="agendamento">
-        <h3>Agendamentos</h3>
-        <p class="hora">13:00</p>
-        <p>Terça-feira, 1 de julho 2025</p>
-        <p><strong>Procedimento:</strong> Design da Sobrancelha</p>
-        <p><strong>Duração:</strong> 30 minutos</p>
-        <p><strong>Finalização:</strong> 13:30Hrs</p>
-        <button>Cancelar Agendamento</button>
-      </div>
-
-      <div class="agendamento">
-        <h3>Agendamentos</h3>
-        <p class="hora">13:00</p>
-        <p>Terça-feira, 1 de julho 2025</p>
-        <p><strong>Procedimento:</strong> Design da Sobrancelha</p>
-        <p><strong>Duração:</strong> 30 minutos</p>
-        <p><strong>Finalização:</strong> 13:30Hrs</p>
-        <button>Cancelar Agendamento</button>
-      </div>
-
-      <div class="agendamento">
-        <h3>Agendamentos</h3>
-        <p class="hora">13:00</p>
-        <p>Terça-feira, 1 de julho 2025</p>
-        <p><strong>Procedimento:</strong> Design da Sobrancelha</p>
-        <p><strong>Duração:</strong> 30 minutos</p>
-        <p><strong>Finalização:</strong> 13:30Hrs</p>
-        <button>Cancelar Agendamento</button>
+        <a mat-raised-button color="primary" routerLink="/atualizar-perfil">Atualizar Dados</a>
       </div>
     </div>
   </div>

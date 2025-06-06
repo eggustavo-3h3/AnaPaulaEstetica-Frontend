@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendamentoService } from '../../services/agendamento.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-meus-agendamentos',
   templateUrl: './meus-agendamentos.component.html',
   styleUrl: './meus-agendamentos.component.css',
   standalone: true,
-  imports: []
+  imports: [
+    CommonModule
+  ]
 })
 export class MeusAgendamentosComponent implements OnInit {
   agendamentos: any[] = [];
@@ -16,6 +19,7 @@ export class MeusAgendamentosComponent implements OnInit {
   ngOnInit() {
     this.agendamentoService.listarMeusAgendamentos().subscribe(data => {
       this.agendamentos = data;
+      console.log('Meus Agendamentos:', this.agendamentos);
     });
   }
 }

@@ -2,26 +2,32 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #e9d4bb;
-    color: #111; /* Adicione esta linha para letras pretas */
-  }
-
-  h2 {
-    color: #111; /* Adiciona cor preta para os títulos */
+    color: #111;
   }
   
-
+  h2 {
+    color: #8c6a4f;
+  }
+  
   .container {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
+    min-height: 100vh;
+    background: #e9d4bb;
+    justify-content: center;
   }
   
   .sidebar {
-    background-color: #F7EEE7;
-    padding: 20px;
+    background-color: #f7eee7;
+    padding: 30px 20px;
     border-radius: 20px;
-    width: 300px;
-    margin-right: 20px;
+    width: 270px;              /* diminuído */
+    margin: 0 20px 20px 0;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .profile-pic {
@@ -34,12 +40,8 @@ body {
     height: 130px;
     background-color: #f0e8df;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
   }
-
-  .main {
-    background-color: #f0e8df;
-}
   
   .camera-icon {
     margin-top: -25px;
@@ -47,110 +49,89 @@ body {
   }
   
   .profile-pic h2 {
-    color: #111;
+    color: #8c6a4f;
+    margin-top: 10px;
+  }
+  
+  .dados-pessoais {
+    width: 100%;
   }
   
   .dados-pessoais h3 {
     font-size: 24px;
     margin-bottom: 10px;
-   text-align: center;
+    text-align: center;
+    color: #8c6a4f;
   }
   
-  .agendamentos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    flex: 1;
+  .dados-pessoais p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: #6e503d;
   }
   
-  .agendamento {
-    background-color: #F7EEE7;
-    padding: 20px;
-    border-radius: 20px;
-    width: 100%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  .dados-pessoais strong {
+    color: #8c6a4f;
   }
   
-  .agendamento h3 {
-    margin-top: 0;
-    font-size: 20px;
-  }
-  
-  .agendamento .hora {
-    background-color: #f4d6bc;
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #111; /* Mantém a hora clara */
-  }
-  
-  .agendamento button {
-    margin-top: 15px;
-    background-color: #8C6A4F;
+  .dados-pessoais a[mat-raised-button] {
+    display: block;            /* ocupa toda a largura do pai */
+    margin: 24px auto 0 auto;  /* centraliza horizontalmente */
+    padding: 10px 24px;
+    background-color: #8c6a4f;
+    color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+    box-shadow: 0 2px 4px rgba(140, 106, 79, 0.12);
     cursor: pointer;
-    font-weight: bold;
-    color: white; /* Mantém o texto do botão claro */
+    max-width: 170px;
   }
-
+  
+  .dados-pessoais a[mat-raised-button]:hover {
+    background-color: #a07a5b;
+    color: #fff;
+    text-decoration: none;
+  }
+  
   @media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+    .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    .sidebar {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 24px;
+      max-width: 400px;
+    }
   }
-  .sidebar {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 24px;
-    max-width: 400px;
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 4px;
+    }
+    .sidebar {
+      padding: 12px;
+      border-radius: 12px;
+      max-width: 100%;
+    }
+    .profile-pic .circle {
+      width: 90px;
+      height: 90px;
+    }
+    .dados-pessoais h3 {
+      font-size: 18px;
+    }
+    .profile-pic h2 {
+      font-size: 1.2rem;
+    }
+    .dados-pessoais p {
+      font-size: 1rem;
+    }
   }
-  .agendamentos-grid {
-    grid-template-columns: 1fr;
-    width: 100%;
-    max-width: 600px;
-  }
-}
-
-/* Responsividade para celulares */
-@media (max-width: 600px) {
-  .container {
-    padding: 4px;
-  }
-  .sidebar {
-    padding: 12px;
-    border-radius: 12px;
-    max-width: 100%;
-  }
-  .profile-pic .circle {
-    width: 90px;
-    height: 90px;
-  }
-  .agendamentos-grid {
-    gap: 10px;
-    padding: 0;
-  }
-  .agendamento {
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .dados-pessoais h3 {
-    font-size: 18px;
-  }
-  .agendamento h3 {
-    font-size: 16px;
-  }
-  .agendamento .hora {
-    font-size: 14px;
-    padding: 3px 8px;
-  }
-  .agendamento button {
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 10px;
-  }
-}

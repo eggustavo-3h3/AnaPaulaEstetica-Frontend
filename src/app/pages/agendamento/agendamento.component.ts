@@ -27,6 +27,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AgendamentoComponent implements OnInit {
   selected: Date | null = null;
   horarios: any[] = [];
+  horariosDisponiveis: any[] = []; // Adicione esta linha
   horarioSelecionado: string = '';
 
   constructor(
@@ -70,6 +71,7 @@ export class AgendamentoComponent implements OnInit {
       next: (horarios) => {
         console.log('Horários recebidos:', horarios);
         this.horarios = horarios;
+        this.horariosDisponiveis = horarios.filter(h => !h.ocupado); // Filtra aqui!
       },
       error: (error) => {
         console.error('Erro ao buscar horários disponíveis:', error);

@@ -17,7 +17,7 @@
   <!-- Horários -->
   <div class="horarios">
     <div class="horarios-list">
-      @for (horario of horarios; track $index) {
+      @for (horario of horariosDisponiveis; track $index) {
         <button mat-raised-button color="primary" class="horario-btn"
           [class.selected]="horarioSelecionado === horario.horario"
           [disabled]="horario.ocupado"
