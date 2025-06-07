@@ -4,9 +4,11 @@
   <div class="horarios">
     <div class="horarios-list">
       @for (horario of horarios; track $index) {
-        <button mat-raised-button color="primary" class="horario-btn">
-          {{ horario.horario }}
-        </button>
+        @if (!horario.ocupado) {
+          <button mat-raised-button color="primary" class="horario-btn">
+            {{ horario.horario }}
+          </button>
+        }
       }
     </div>
   </div>
