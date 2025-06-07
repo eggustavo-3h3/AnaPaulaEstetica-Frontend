@@ -1,19 +1,23 @@
-.admin-container {
+.meus-agendamentos-container {
   min-height: 100vh;
   padding: 20px;
+  background-color: #E5D0B9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.admin-title {
+.meus-agendamentos-container h2 {
   text-align: center;
   font-weight: bold;
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
-.admin-card {
-  background: #F7EEE7;
+.meus-agendamentos-list {
+  background: #f7eee7;
   border-radius: 15px;
   max-width: 1000px;
   margin: 0 auto;
@@ -26,44 +30,35 @@
   font-size: 1.2rem;
 }
 
-.admin-table th, .admin-table td {
+.admin-table th,
+.admin-table td {
   padding: 15px;
   text-align: center;
 }
 
 .admin-table thead {
-  background:  #EAD3B8;
-  color:#000000;
+  background: #ead3b8;
+  color: #000000;
 }
 
 .beige-row {
-  background:#F7EEE7;
+  background: #f7eee7;
   color: black;
 }
 
 .white-row {
-  background:#EAD3B8;
+  background: #ead3b8;
   color: black;
-}
-
-.actions a {
-  color: #000000;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.actions a:hover {
-  text-decoration: underline;
 }
 
 /* Responsividade para tablets */
 @media (max-width: 900px) {
-  .admin-card {
+  .meus-agendamentos-list {
     padding: 10px;
     max-width: 100%;
   }
-  .admin-table th, .admin-table td {
+  .admin-table th,
+  .admin-table td {
     padding: 8px;
     font-size: 1rem;
   }
@@ -71,10 +66,15 @@
 
 /* Responsividade para celulares */
 @media (max-width: 600px) {
-  .admin-card {
+  .meus-agendamentos-list {
     padding: 4px;
   }
-  .admin-table, .admin-table thead, .admin-table tbody, .admin-table tr, .admin-table th, .admin-table td {
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table th,
+  .admin-table td {
     display: block;
     width: 100%;
   }
@@ -101,8 +101,5 @@
     display: block;
     margin-bottom: 4px;
     font-size: 0.95rem;
-  }
-  .actions {
-    margin-top: 8px;
   }
 }

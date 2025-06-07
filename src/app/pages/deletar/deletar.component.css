@@ -1,0 +1,94 @@
+/* Container principal */
+.admin-container {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #e5d0b9; /* Fundo bege claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título */
+.admin-title {
+  text-align: center;
+  font-weight: bold;
+  color: #b22222;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Card de confirmação */
+.admin-card {
+  background: #fff8f3;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Texto de confirmação */
+.admin-card p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: #8c6a4f;
+}
+
+/* Nome do item */
+.admin-card strong {
+  color: #b22222;
+}
+
+/* Botões */
+.admin-card button {
+  margin: 0 8px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #b22222;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.admin-card button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-card button:last-child {
+  background: #aaa;
+}
+
+/* Mensagem de status */
+.admin-card div[ng-reflect-ng-if], .admin-card .mensagem {
+  margin-top: 18px;
+  color: #b22222;
+  font-weight: bold;
+}
+
+/* Loader */
+.admin-card ng-template p {
+  color: #8c6a4f;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .admin-card {
+    padding: 12px 4px;
+    max-width: 95vw;
+  }
+  .admin-title {
+    font-size: 1.1rem;
+  }
+  .admin-card button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}

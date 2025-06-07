@@ -1,0 +1,28 @@
+<div class="meus-agendamentos-container">
+  <h2>Meus Agendamentos</h2>
+  <div *ngIf="agendamentos.length === 0">Nenhum agendamento encontrado.</div>
+  <div class="meus-agendamentos-list" *ngIf="agendamentos.length > 0">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Nome Cliente</th>
+          <th>Serviço Agendado</th>
+          <th>Início</th>
+          <th>Fim</th>
+          <th>Horário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agendamento of agendamentos; let i = index" [ngClass]="i % 2 === 0 ? 'beige-row' : 'white-row'">
+          <td data-label="Nome Cliente">{{ agendamento.nomeUsuario }}</td>
+          <td data-label="Serviço Agendado">{{ agendamento.nomeProduto }}</td>
+          <td data-label="Início">{{ agendamento.data | date:'dd/MM/yyyy' }}</td>
+          <td data-label="Fim">{{ agendamento.horaFinal }}</td>
+          <td data-label="Horário">
+            {{ agendamento.horaInicial }} - {{ agendamento.horaFinal }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

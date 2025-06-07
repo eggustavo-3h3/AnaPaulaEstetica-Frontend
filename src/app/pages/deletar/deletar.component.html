@@ -1,0 +1,17 @@
+<div class="admin-container">
+  <div class="admin-title">Confirmação de Exclusão</div>
+  <div class="admin-card">
+    <ng-container *ngIf="item; else carregando">
+      <p>
+        Tem certeza que deseja deletar este {{ tipo === 'categoria' ? 'categoria' : 'serviço' }}?
+        <strong>{{ item.nome || item.descricao }}</strong>
+      </p>
+      <button (click)="deletar()" [disabled]="loading">Confirmar</button>
+      <button (click)="cancelar()" [disabled]="loading">Cancelar</button>
+      <div *ngIf="mensagem">{{ mensagem }}</div>
+    </ng-container>
+    <ng-template #carregando>
+      <p>Carregando informações...</p>
+    </ng-template>
+  </div>
+</div>

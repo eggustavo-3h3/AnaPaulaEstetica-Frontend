@@ -39,7 +39,17 @@ export class LoginComponent {
       this.username,
       this.password
     ).subscribe({
-      next:() => {
+      next:(token: string) => {
+        localStorage.setItem('token', token);
+
+        const payload = this.authService.decodeJwtPayload(token);
+        console.log('Payload JWT:', payload); // Veja o campo do ID aqui
+
+        // Salve o campo correto do ID:
+        if (payload && payload.Id) {
+          localStorage.setItem('usuarioId', payload.Id);
+        }
+
         this.snackBar.open(
           "Login realizado com sucesso!",
           "Fechar",
@@ -53,9 +63,7 @@ export class LoginComponent {
           {duration: 3000}
         );
       }
-
     })
   }
 
 }
- 

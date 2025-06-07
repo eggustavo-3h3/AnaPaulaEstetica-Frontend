@@ -11,13 +11,20 @@
     </div>
     <mat-card-title>Cadastro de Categoria</mat-card-title>
     <mat-card-content>
-      <form>
+      <form [formGroup]="formCategoria" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Nome do Procedimento</mat-label>
-          <input matInput placeholder="Digite o nome do procedimento" type="text">
+          <input matInput placeholder="Digite o nome do procedimento" type="text" formControlName="descricao">
+          <mat-error *ngIf="submitted && f['descricao'].errors?.['required']">
+            Nome do procedimento é obrigatório.
+          </mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="button">Adicionar</button>
+        <button mat-raised-button color="primary" type="submit">Adicionar</button>
+
+        <div *ngIf="errorMessage">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
       </form>
     </mat-card-content>
   </mat-card>

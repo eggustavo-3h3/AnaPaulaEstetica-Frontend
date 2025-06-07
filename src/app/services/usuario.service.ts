@@ -17,4 +17,14 @@ export class UsuarioService {
         // Método para adicionar uma nova Usuario
         return this.http.post<string>(`${this.urlBase}/usuario/adicionar`, usuario)
     }
+
+    listarUsuario(): Observable<any[]> {
+        // Agora busca usuários corretamente
+        return this.http.get<any[]>(`${this.urlBase}/usuario/listar`);
+    }
+
+    atualizarUsuario(usuario: any): Observable<any> {
+        // Método para atualizar um Usuario
+        return this.http.put<any>(`${this.urlBase}/usuario/atualizar`, usuario);
+    }
 }

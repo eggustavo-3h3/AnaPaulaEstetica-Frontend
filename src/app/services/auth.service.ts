@@ -55,4 +55,13 @@ export class AuthService{
             'Authorization':`Bearer ${this.token}`
         });
     }
+
+    decodeJwtPayload(token: string): any {
+        try {
+          const payload = token.split('.')[1];
+          return JSON.parse(atob(payload));
+        } catch (e) {
+          return null;
+        }
+      }
 }
