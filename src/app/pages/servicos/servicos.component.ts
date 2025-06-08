@@ -10,17 +10,17 @@ import { AgendamentoComponent } from '../agendamento/agendamento.component';
 @Component({
   selector: 'app-servicos',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatButtonModule, MatCardModule, AgendamentoComponent],
+  imports: [CommonModule, MatDialogModule, MatButtonModule, MatCardModule],
   templateUrl: './servicos.component.html',
   styleUrl: './servicos.component.css'
 })
 export class ServicosComponent implements OnInit {
-  servicos: any[] = []; // Adjust type as needed
+  servicos: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private servicoService: ServicoService,
-    private dialog: MatDialog // Adicione isso
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {

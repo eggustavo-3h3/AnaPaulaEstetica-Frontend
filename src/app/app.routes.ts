@@ -21,22 +21,22 @@ import { AtualizarPerfilComponent } from './pages/atualizar-perfil/atualizar-per
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'tipo-servico/listar', component: TipoServicoListComponent }, //, canActivate: [AuthGuard] 
+  { path: 'tipo-servico/listar', component: TipoServicoListComponent }, 
   { path: 'home', component: HomeComponent },
-  { path: 'sobre', component: SobreComponent }, //, canActivate: [AuthGuard]
+  { path: 'sobre', component: SobreComponent },
   { path: 'servicos/:id', component: ServicosComponent },
-  { path: 'cadastro', component: CadastrarComponent }, //, canActivate: [AuthGuard]
-  { path: 'cadastro-categoria', component: CadastroCategoriaComponent},
-  { path: 'categoria-atualizar', component: CategoriaAtualizarComponent},
-  { path: 'cadastro-produto', component: CadastroServicoComponent},
-  { path: 'atualizar-produto', component: ServicoAtualizarComponent},
-  { path: 'adm-agendamento', component: AdmAgendamentoComponent},
-  { path: 'adm-categoria', component: AdmCategoriaComponent},
-  { path: 'agendamento', component: AgendamentoComponent},
-  { path: 'redefinir-senha', component: RedefinirSenhaComponent},
-  { path: 'perfil-usuario', component: PerfilUsuarioComponent},
-  { path: 'deletar/:id', component: DeletarComponent},
-  { path: 'meus-agendamentos', component: MeusAgendamentosComponent},
-  { path: 'atualizar-perfil', component: AtualizarPerfilComponent},
+  { path: 'cadastro', component: CadastrarComponent },
+  { path: 'cadastro-categoria', component: CadastroCategoriaComponent, canActivate: [AuthGuard]},
+  { path: 'categoria-atualizar', component: CategoriaAtualizarComponent, canActivate: [AuthGuard]},
+  { path: 'cadastro-produto', component: CadastroServicoComponent, canActivate: [AuthGuard]},
+  { path: 'atualizar-produto', component: ServicoAtualizarComponent, canActivate: [AuthGuard]},
+  { path: 'adm-agendamento', component: AdmAgendamentoComponent, canActivate: [AuthGuard]},
+  { path: 'adm-categoria', component: AdmCategoriaComponent, canActivate: [AuthGuard]},
+  { path: 'agendamento', component: AgendamentoComponent, canActivate: [AuthGuard]},
+  { path: 'redefinir-senha', component: RedefinirSenhaComponent, canActivate: [AuthGuard]},
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
+  { path: 'deletar/:id', component: DeletarComponent, canActivate: [AuthGuard]},
+  { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [AuthGuard]},
+  { path: 'atualizar-perfil', component: AtualizarPerfilComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];

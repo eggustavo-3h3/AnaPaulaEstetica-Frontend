@@ -1,15 +1,16 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { API_BASE_URL } from "../resources/util";
+import { environment } from "../../environments/environment.development";
 
 @Injectable({
    providedIn : 'root'
 })
 export class HorarioService {
+    private baseUrl = environment.apiUrl;
+    
     constructor(private http : HttpClient) {}
 
     listarHorariosDisponiveis(dataBase: string) {
-        return this.http.get<any[]>(`${API_BASE_URL}/agendamento/horarios-disponiveis?dataBase=${dataBase}`);
+        return this.http.get<any[]>(`${this.baseUrl}/agendamento/horarios-disponiveis?dataBase=${dataBase}`);
     }
 }

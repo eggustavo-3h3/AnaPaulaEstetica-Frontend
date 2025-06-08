@@ -21,6 +21,14 @@
     <img src="assets/img/logo.png" alt="Logo" class="logo">
   </div>
 
+  {{ isAdmin$ | async }}
+
+  {{ authService.isAdmin$() | async }}
+
+  {{ authService.isAdmix() }}  
+
+  {{ authService.getPerfil$() | async }}
+
   <!-- Navbar -->
   <nav class="navbar">
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
