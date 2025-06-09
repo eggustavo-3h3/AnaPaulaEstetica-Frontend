@@ -1,38 +1,39 @@
-<div class="agendamento-row">
-  <!-- Info produto -->
-  <div class="servicos-card">
-    <div class="servicos-info-row">
-      <img *ngIf="data?.servico?.imagem" [src]="data?.servico?.imagem" alt="Imagem do serviço" class="servico-img" />
-      <div class="servicos-title">{{ data?.servico?.descricao }}</div>
-      <div class="tempo-servico">
-        <span class="icon-tempo">⏱️</span>
-        <span class="tempo-badge">{{ data?.servico?.tempo }} min</span>
+    <button class="btn-fechar-modal" (click)="dialogRef.close()" aria-label="Fechar modal">&times;</button>
+    <div class="agendamento-row">
+      <!-- Horários à esquerda -->
+      <div class="horarios">
+        <div class="horarios-list">
+          @for (horario of horariosDisponiveis; track $index) {
+            <button mat-raised-button color="primary" class="horario-btn"
+              [class.selected]="horarioSelecionado === horario.horario"
+              [disabled]="horario.ocupado"
+              (click)="horarioSelecionado = horario.horario">
+              {{ horario.horario | mask:'00:00' }}
+            </button>
+          }
+        </div>
       </div>
-      <div class="valor">
-        {{ data?.servico?.preco | currency:'BRL' }}
+
+      <!-- Calendário central -->
+      <mat-card class="card calendario-card">
+        <mat-calendar [(selected)]="selected" (selectedChange)="onDateChange($event)"></mat-calendar>
+        <div class="botoes-servicos">
+          <button mat-raised-button color="accent" class="btn-finalizar" (click)="agendarEFinalizar()">Agendar e Finalizar</button>
+        </div>
+      </mat-card>
+
+      <!-- Resumo do serviço à direita -->
+      <div class="servicos-card">
+        <div class="servicos-info-row">
+          <img *ngIf="data?.servico?.imagem" [src]="data?.servico?.imagem" alt="Imagem do serviço" class="servico-img" />
+          <div class="servicos-title">{{ data?.servico?.descricao }}</div>
+          <div class="tempo-servico">
+            <span class="icon-tempo">⏱️</span>
+            <span class="tempo-badge">{{ data?.servico?.tempo }} min</span>
+          </div>
+          <div class="valor">
+            {{ data?.servico?.preco | currency:'BRL' }}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Horários -->
-  <div class="horarios">
-    <div class="horarios-list">
-      @for (horario of horariosDisponiveis; track $index) {
-        <button mat-raised-button color="primary" class="horario-btn"
-          [class.selected]="horarioSelecionado === horario.horario"
-          [disabled]="horario.ocupado"
-          (click)="horarioSelecionado = horario.horario">
-          {{ horario.horario | mask:'00:00' }}
-        </button>
-      }
-    </div>
-  </div>
-
-  <!-- Calendário -->
-  <mat-card class="card calendario-card">
-    <mat-calendar [(selected)]="selected" (selectedChange)="onDateChange($event)"></mat-calendar>
-    <div class="botoes-servicos">
-      <button mat-raised-button color="accent" class="btn-finalizar" (click)="agendarEFinalizar()">Agendar e Finalizar</button>
-    </div>
-  </mat-card>
-</div>

@@ -4,17 +4,19 @@
     <mat-card-content>
       <form (ngSubmit)="onLogin()">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Nome de usuário</mat-label>
-          <input matInput [(ngModel)]="username" name="username" required>
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="username" name="email" required>
         </mat-form-field>
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Senha</mat-label>
           <input matInput [(ngModel)]="password" name="password" type="password" required>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">Login</button>
-        
       </form>
-      <a routerLink="/cadastro">Cadastre-se</a>
+      <div class="links">
+        <a routerLink="/cadastro">Cadastre-se</a>
+        <a routerLink="/enviar-email">Esqueci minha senha</a>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

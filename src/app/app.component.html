@@ -1,105 +1,63 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.145.0">
-  <title>Início</title>
-
-  <meta name="theme-color" content="#712cf9">
-
-</head>
-
-<body>
-
-  <div class="main-container">
+<!-- Remova DOCTYPE, <html>, <head> e <body> do template do componente Angular! -->
+<div class="main-container">
   <!-- Logo -->
   <div class="logo-container">
     <img src="assets/img/logo.png" alt="Logo" class="logo">
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(247, 238, 231) !important;" >
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home" style="color: rgb(140, 106, 79) !important;">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown" style="color: rgb(140, 106, 79) !important;">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="tipo-servico/listar" style="color: rgb(140, 106, 79) !important;">Serviços</a>
-          </li>
+  <nav class="navbar">
+    <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
+    <div class="nav-links" [ngClass]="{ 'open': menuOpen }">
+      <a class="custom-navbar-link" routerLink="/home">Home</a>
+      <a class="custom-navbar-link" routerLink="tipo-servico/listar">Serviços</a>
 
-          @if (perfilUsuario === 'Usuario') {
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/meus-agendamentos" style="color: rgb(140, 106, 79) !important;">Meus Agendamentos</a>
-            </li>
-          }
+      <ng-container *ngIf="perfilUsuario === 'Usuario'">
+        <a class="custom-navbar-link" routerLink="/meus-agendamentos">Meus Agendamentos</a>
+      </ng-container>
 
-          @if (perfilUsuario === 'Administrador') {
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
-                Serviços (Adm)
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/cadastro-categoria">Cadastrar</a></li>
-                <li><a class="dropdown-item" routerLink="/categoria-atualizar">Alterar</a></li>
-                <!-- <li><a class="dropdown-item" routerLink="/adm-categoria">Serviços e Produtos</a></li> -->
-              </ul>
-            </li>
+      <ng-container *ngIf="perfilUsuario === 'Administrador'">
+        <div class="dropdown">
+          <a class="dropdown-toggle custom-navbar-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Serviços (Adm)
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item custom-navbar-link" routerLink="/cadastro-categoria">Cadastrar</a></li>
+            <li><a class="dropdown-item custom-navbar-link" routerLink="/categoria-atualizar">Alterar</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle custom-navbar-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produtos (Adm)
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item custom-navbar-link" routerLink="/cadastro-produto">Cadastrar</a></li>
+            <li><a class="dropdown-item custom-navbar-link" routerLink="/atualizar-produto">Alterar</a></li>
+          </ul>
+        </div>
+        <a class="custom-navbar-link" routerLink="/adm-categorias-serviços">Deletar</a>
+        <a class="custom-navbar-link" routerLink="/adm-agendamento">Agendamentos</a>
+      </ng-container>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
-                Produtos (Adm)
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/cadastro-produto">Cadastrar</a></li>
-                <li><a class="dropdown-item" routerLink="/atualizar-produto">Alterar</a></li>
-              </ul>
-            </li>  
+      <a class="custom-navbar-link" routerLink="/sobre">Sobre</a>
 
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/adm-agendamento" style="color: rgb(140, 106, 79) !important;">Agendamentos</a>
-            </li>
-          }
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/sobre" style="color: rgb(140, 106, 79) !important;">Sobre</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          @if (perfilUsuario === null) {
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login" style="color: rgb(140, 106, 79) !important;">Login</a>
-            </li>
-          }
+      <ng-container *ngIf="perfilUsuario === null">
+        <a class="custom-navbar-link" routerLink="/login">Login</a>
+      </ng-container>
 
-          @if (perfilUsuario !== null) {
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
-                {{ nomeUsuario}}
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/alterar-senha">Alterar Senha</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="javascript:void(0)" (click)="authService.logout()">Sair</a></li>
-              </ul>
-            </li>
-          }
-        </ul>        
-      </div>
+      <ng-container *ngIf="perfilUsuario !== null">
+        <div class="dropdown">
+          <a class="dropdown-toggle custom-navbar-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ nomeUsuario }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/perfil-usuario">Perfil</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0)" (click)="authService.logout()">Sair</a></li>
+          </ul>
+        </div>
+      </ng-container>
     </div>
   </nav>
-
-
-
-
-
-
-
 
   <!-- Conteúdo Principal -->
   <main class="content">
@@ -111,10 +69,3 @@
     <p>&copy; 2025 Ana Paula Mira - Todos os direitos reservados.</p>
   </footer>
 </div>
-
-  <script defer src="../assets/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
-
-</body>
-
-</html>

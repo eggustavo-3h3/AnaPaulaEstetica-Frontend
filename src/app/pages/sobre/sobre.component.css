@@ -1,106 +1,120 @@
 /* Estilo geral */
+html, body {
+  height: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #e5d0b9;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   font-family: Arial, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px;
-  background-color: #e5d0b9; /* Fundo branco */
+  padding: 12px;
+  background-color: #EAD3B8;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  color: #8c6a4f; /* Cor semelhante ao logo */
+  font-size: 2rem;
+  color: #8c6a4f;
 }
 
 /* Layout principal */
 .content {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
   justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  min-height: 0;
 }
 
-/* Seção de informações */
-.info {
-  flex: 1 1 300px;
-  background-color: #f4ece4; /* Fundo bege claro */
-  padding: 16px;
+/* Cards do mesmo tamanho */
+.info, .contact, .location {
+  background-color: #f4ece4;
+  padding: 14px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  min-width: 260px;
+  max-width: 340px;
+  width: 320px;
+  min-height: 340px;
+  height: 340px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .info img {
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  margin-bottom: 16px;
-  border: 3px solid #8c6a4f; /* Borda da imagem */
+  margin-bottom: 12px;
+  border: 2px solid #8c6a4f;
 }
 
 .info p {
   text-align: justify;
-  color: #000000;
-  line-height: 1.6;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Seção de contato */
 .contact {
-  flex: 1 1 300px;
-  background-color: #f4ece4; /* Fundo bege claro */
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
 }
 
-.contact h2, .contact h3 {
-  color: #8c6a4f; /* Cor semelhante ao logo */
-  margin-bottom: 8px;
+.contact h2, .contact h3, .location h2 {
+  color: #8c6a4f;
+  margin-bottom: 6px;
 }
 
-.contact p {
-  color: #000000;
-  line-height: 1.6;
+.contact p, .location p {
+  color: #000;
+  font-size: 1rem;
+  margin: 2px 0;
+  text-align: left;
 }
 
 /* Seção de localização */
 .location {
-  flex: 1 1 300px;
-  background-color: #f4ece4; /* Fundo bege claro */
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.location img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  margin-top: 8px;
-  border: 2px solid #8c6a4f; /* Borda da imagem */
-}
-
-.location h2 {
-  color: #8c6a4f; /* Cor semelhante ao logo */
-  margin-bottom: 8px;
-}
-
-.location p {
-  color: #000000; /* Cor do texto */
-  line-height: 1.6;
+  align-items: flex-start;
 }
 
 .location iframe {
   width: 100%;
-  max-width: 1000px;
+  height: 180px;
   border-radius: 8px;
-  border: 2px solid #8c6a4f; /* Borda semelhante ao design */
+  border: 2px solid #8c6a4f;
+  margin-top: 8px;
+  display: block;
+  max-width: 100%;
 }
 
 /* Rodapé */
@@ -109,24 +123,69 @@
   margin-top: 16px;
   font-size: 14px;
   color: #666;
-  background-color: #f9f9f9; /* Fundo cinza claro */
+  background-color: #f9f9f9;
   padding: 8px;
   border-top: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .container {
+    padding: 6px;
+  }
+  .content {
+    gap: 12px;
+  }
+  .info, .contact, .location {
+    min-width: 180px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 900px) {
   .content {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
-
   .info, .contact, .location {
     flex: 1 1 100%;
+    max-width: 420px;
+    width: 100%;
+    min-height: 220px;
+    height: auto;
+    margin-bottom: 0;
   }
+  .location iframe {
+    width: 100%;
+    height: 160px;
+    min-width: 0;
+  }
+}
 
+@media (max-width: 600px) {
+  .container {
+    padding: 2px;
+  }
+  .header h1 {
+    font-size: 1.2rem;
+  }
   .info img {
-    width: 120px;
+    width: 60px;
+    height: 60px;
+  }
+  .info, .contact, .location {
+    padding: 8px;
+    min-height: 160px;
+    height: auto;
+  }
+  .location iframe {
     height: 120px;
   }
 }

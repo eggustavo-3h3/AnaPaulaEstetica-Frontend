@@ -45,9 +45,9 @@ export class ServicosComponent implements OnInit {
   openAgendamentoModal(servico: any) {
     this.dialog.open(AgendamentoComponent, {
       data: { servico },
-      maxWidth: '1500px',
-      width: '98vw',
-      panelClass: 'agendamento-modal-panel'
+      autoFocus: false,
+      restoreFocus: false,
+      panelClass: 'agendamento-modal-panel' // Adicione esta linha!
     });
   }
 }

@@ -1,15 +1,37 @@
-/* Container principal */
+/* Corrige cor do fundo e previne scroll lateral */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #EAD3B8 !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Layout principal ocupa toda a tela e permite footer fixo */
+body, app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal centralizado e sem scroll extra */
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #e5d0b9; /* Fundo bege claro */
-    padding: 20px; /* Adiciona espaçamento interno */
-  }
-  
-  /* Card de cadastro */
-  .register-card {
+  flex: 1 0 auto;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #EAD3B8;
+  padding-top: 4vh; /* Menos espaço do topo */
+  padding-bottom: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* Card de cadastro */
+.register-card {
     background-color: #f4ece4; /* Fundo branco */
     padding: 30px;
     border-radius: 10px; /* Bordas arredondadas */
@@ -17,6 +39,7 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
+    margin-bottom: 0; /* Remove espaço extra abaixo */
   }
   
   /* Título do card */
@@ -116,3 +139,17 @@
   .image-upload-container:hover .profile-placeholder {
     border-color: #8c6a4f;
   }
+
+  /* Footer sempre visível no final da tela */
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: #e5d0b9;
+  color: #8c6a4f;
+  text-align: center;
+  padding: 12px 0 10px 0;
+  font-size: 1rem;
+  border-top: 1px solid #c4a992;
+  position: relative;
+  bottom: 0;
+}

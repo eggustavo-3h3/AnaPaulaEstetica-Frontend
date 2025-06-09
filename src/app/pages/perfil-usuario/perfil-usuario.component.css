@@ -13,48 +13,57 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    min-height: 100vh;
+    min-height: calc(80vh - 80px); /* Diminui a altura mínima da área bege */
     background: #e9d4bb;
     justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    max-width: 900px; /* Diminui a largura máxima */
+    margin: 0 auto;
   }
   
   .sidebar {
     background-color: #f7eee7;
-    padding: 30px 20px;
-    border-radius: 20px;
-    width: 270px;              /* diminuído */
-    margin: 0 20px 20px 0;
+    padding: 10px 8px;
+    border-radius: 16px;
+    width: 220px;
+    min-height: unset;
+    height: auto; /* Garante altura só do conteúdo */
+    margin: 0 12px 12px 0;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    flex-grow: 0;   /* <-- Adicione esta linha */
+    flex-shrink: 0; /* <-- Adicione esta linha */
   }
   
   .profile-pic {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
   }
   
   .circle {
-    width: 130px;
-    height: 130px;
+    width: 70px;
+    height: 70px;
     background-color: #f0e8df;
     border-radius: 50%;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 4px auto;
   }
 
   button[mat-raised-button][color="warn"] {
   background-color: #A07A5B;
   color: #fff;
-  margin-top: 24px;
+  margin-top: 8px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 24px;
+  padding: 6px 12px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  max-width: 170px;
+  max-width: 120px;
   transition: background 0.2s;
 }
 button[mat-raised-button][color="warn"]:hover {
@@ -76,15 +85,16 @@ button[mat-raised-button][color="warn"]:hover {
   }
   
   .dados-pessoais h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 4px;
+    margin-top: 0;
     text-align: center;
     color: #8c6a4f;
   }
   
   .dados-pessoais p {
-    font-size: 1.1rem;
-    margin: 8px 0;
+    font-size: 0.98rem;
+    margin: 2px 0;
     color: #6e503d;
   }
   
@@ -116,40 +126,47 @@ button[mat-raised-button][color="warn"]:hover {
     text-decoration: none;
   }
   
-  @media (max-width: 900px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-    }
-    .sidebar {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 24px;
-      max-width: 400px;
-    }
+  /* Responsivo */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 98vw;
+    padding: 16px 2vw;
   }
-  
-  @media (max-width: 600px) {
+  .sidebar {
+    margin-right: 0;
+    margin-bottom: 24px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 100vw;
+  }
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
     .container {
       padding: 4px;
+      max-width: 100vw;
     }
     .sidebar {
-      padding: 12px;
-      border-radius: 12px;
+      padding: 6px 2px;
+      border-radius: 10px;
       max-width: 100%;
+      width: 100%;
     }
-    .profile-pic .circle {
-      width: 90px;
-      height: 90px;
-    }
-    .dados-pessoais h3 {
-      font-size: 18px;
-    }
-    .profile-pic h2 {
-      font-size: 1.2rem;
-    }
-    .dados-pessoais p {
-      font-size: 1rem;
+    .circle {
+      width: 50px;
+      height: 50px;
     }
   }

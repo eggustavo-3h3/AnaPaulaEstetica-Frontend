@@ -3,9 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #e5d0b9; /* Fundo bege claro */
-  padding: 20px; /* Adiciona espaçamento interno */
+  min-height: 70vh; /* Ajuste conforme necessário para centralizar */
+  background-color: #e5d0b9;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  /* Removido: position, height, width, overflow */
+}
+
+/* NÃO use overflow: hidden no body/html */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Card de login */
@@ -17,6 +27,7 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+  margin: 0 auto; /* Centraliza horizontalmente caso necessário */
 }
 
 /* Título do card */

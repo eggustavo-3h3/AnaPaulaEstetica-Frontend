@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HorarioService } from '../../services/horario.service';
 import { AgendamentoService } from '../../services/agendamento.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { NgxMaskPipe } from 'ngx-mask';
 
 @Component({
   selector: 'app-agendamento',
@@ -19,8 +19,7 @@ import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
     MatDatepickerModule,
     MatButtonModule,
     MatIconModule,
-    CommonModule,
-    NgxMaskDirective, 
+    CommonModule, 
     NgxMaskPipe
   ],
   providers: [provideNativeDateAdapter()],

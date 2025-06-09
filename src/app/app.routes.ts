@@ -11,7 +11,6 @@ import { CategoriaAtualizarComponent } from './pages/atualizar-categoria/atualiz
 import { AdmAgendamentoComponent } from './pages/adm-agendamento/adm-agendamento.component';
 import { AdmCategoriaComponent } from './pages/adm-categoria/adm-categoria.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-import { RedefinirSenhaComponent } from './pages/redefinir-senha/redefinir-senha.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { CadastroServicoComponent } from './pages/cadastro-servico/cadastro-servico.component';
 import { ServicoAtualizarComponent } from './pages/atualizar-servico/atualizar-servico.component';
@@ -20,6 +19,7 @@ import { MeusAgendamentosComponent } from './pages/meus-agendamentos/meus-agenda
 import { AtualizarPerfilComponent } from './pages/atualizar-perfil/atualizar-perfil.component';
 import { EnviarEmailComponent } from './pages/enviar-email/enviar-email.component';
 import { AtualizarSenhaComponent } from './pages/atualizar-senha/atualizar-senha.component';
+import { ResetSenhaComponent } from './pages/reset-senha/reset-senha.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,9 +34,9 @@ export const routes: Routes = [
   { path: 'cadastro-produto', component: CadastroServicoComponent, canActivate: [AuthGuard]},
   { path: 'atualizar-produto', component: ServicoAtualizarComponent, canActivate: [AuthGuard]},
   { path: 'adm-agendamento', component: AdmAgendamentoComponent, canActivate: [AuthGuard]},
-  { path: 'adm-categoria', component: AdmCategoriaComponent, canActivate: [AuthGuard]},
+  { path: 'adm-categorias-serviços', component: AdmCategoriaComponent, canActivate: [AuthGuard]},
   { path: 'agendamento', component: AgendamentoComponent, canActivate: [AuthGuard]},
-  { path: 'reset-senha/:chave-reset', component: RedefinirSenhaComponent, canActivate: [AuthGuard]},
+  { path: 'reset-senha/:chave-reset', component: ResetSenhaComponent},
   { path: 'perfil-usuario', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
   { path: 'deletar/:id', component: DeletarComponent, canActivate: [AuthGuard]},
   { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [AuthGuard]},

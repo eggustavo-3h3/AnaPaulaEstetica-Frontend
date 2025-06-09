@@ -2,21 +2,21 @@
     <mat-card class="card">
       <mat-card-title>Resetar Senha</mat-card-title>
       <mat-card-content>
-        <form>
+        <form (ngSubmit)="onSubmit()">
           <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Código</mat-label>
-            <input matInput [(ngModel)]="codigo" name="username" required>
+            <mat-label>Chave</mat-label>
+            <input matInput [(ngModel)]="chave" name="chave" disabled>
           </mat-form-field>
           <mat-form-field class="full-width" appearance="fill">
             <mat-label>Nova Senha</mat-label>
-            <input matInput [(ngModel)]="novaSenha" name="username" required>
+            <input matInput [(ngModel)]="novaSenha" name="novaSenha" type="password" required>
           </mat-form-field>
           <mat-form-field class="full-width" appearance="fill">
             <mat-label>Confirme sua Senha</mat-label>
-            <input matInput [(ngModel)]="confirmarSenha" name="password" type="password" required>
+            <input matInput [(ngModel)]="confirmarSenha" name="confirmarNovaSenha" type="password" required>
           </mat-form-field>
           <button mat-raised-button color="primary" type="submit">Resetar</button>
-          </form>
+        </form>
       </mat-card-content>
     </mat-card>
 </div>

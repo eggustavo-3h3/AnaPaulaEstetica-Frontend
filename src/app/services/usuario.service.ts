@@ -33,4 +33,12 @@ export class UsuarioService {
         // Método para alterar a senha do usuário
         return this.http.put<any>(`${this.baseUrl}/alterar-senha`, usuario, { headers: this.authService.getAutheHeaders() });
     }
+
+    enviarEmail(usuario: any): Observable<any> {
+        return this.http.post<any>(`${this.baseUrl}/gerar-chave-reset-senha`, usuario);
+    }
+
+    resetarSenha(payload: any): Observable<any> {
+        return this.http.put(`${this.baseUrl}/resetar-senha`, payload);
+    }
 }

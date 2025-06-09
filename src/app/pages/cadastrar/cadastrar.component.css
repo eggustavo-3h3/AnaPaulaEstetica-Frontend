@@ -3,9 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 70vh;          /* Ajuste conforme necessário para centralizar */
     background-color: #e5d0b9; /* Fundo bege claro */
-    padding: 20px; /* Adiciona espaçamento interno */
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
   }
   
   /* Card de login */
