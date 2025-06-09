@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { RouterModule } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -30,8 +31,10 @@ export class LoginComponent {
   password = "";
 
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar){
-
+  constructor(
+    private authService: AuthService, 
+    private snackBar: MatSnackBar, 
+    private router: Router){
   } 
 
   onLogin(){
@@ -43,7 +46,6 @@ export class LoginComponent {
         localStorage.setItem('token', token);
 
         const payload = this.authService.decodeJwtPayload(token);
-        console.log('Payload JWT:', payload); // Veja o campo do ID aqui
 
         // Salve o campo correto do ID:
         if (payload && payload.Id) {
@@ -55,6 +57,8 @@ export class LoginComponent {
           "Fechar",
           {duration: 3000}
         );
+
+        this.router.navigate(['/']);
       },
       error:() => {
         this.snackBar.open(
@@ -65,5 +69,4 @@ export class LoginComponent {
       }
     })
   }
-
 }

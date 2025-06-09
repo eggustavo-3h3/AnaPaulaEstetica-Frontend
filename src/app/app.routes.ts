@@ -33,7 +33,7 @@ export const routes: Routes = [
   { path: 'adm-agendamento', component: AdmAgendamentoComponent, canActivate: [AuthGuard]},
   { path: 'adm-categoria', component: AdmCategoriaComponent, canActivate: [AuthGuard]},
   { path: 'agendamento', component: AgendamentoComponent, canActivate: [AuthGuard]},
-  { path: 'redefinir-senha', component: RedefinirSenhaComponent, canActivate: [AuthGuard]},
+  { path: 'reset-senha/:chave-reset', component: RedefinirSenhaComponent, canActivate: [AuthGuard]},
   { path: 'perfil-usuario', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
   { path: 'deletar/:id', component: DeletarComponent, canActivate: [AuthGuard]},
   { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [AuthGuard]},

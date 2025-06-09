@@ -14,7 +14,33 @@ export class AuthService{
        localStorage.getItem('token')
     );
 
+    private nomeSubject = new BehaviorSubject<string | null>(null);
+
     private perfilSubject = new BehaviorSubject<string | null>(null);
+
+    setNome(perfil: string) {
+        this.nomeSubject.next(perfil);
+    }
+
+    getNome$(): Observable<string | null> {
+        return this.nomeSubject.asObservable();
+    }
+
+    getNomeAtual(): string | null {
+        return this.nomeSubject.value;
+    }
+
+    setPerfil(perfil: string) {
+        this.perfilSubject.next(perfil);
+    }
+
+    getPerfil$(): Observable<string | null> {
+        return this.perfilSubject.asObservable();
+    }
+
+    getPerfilAtual(): string | null {
+        return this.perfilSubject.value;
+    }    
 
     token: any;
 
@@ -30,8 +56,13 @@ export class AuthService{
                     localStorage.setItem('token', response);
                     this.tokenSubject.next(response);
 
-                    var dadosLogin = this.decodeJwtPayload(response);
-                    this.setPerfil(dadosLogin.perfil);
+                    const payload = this.decodeJwtPayload(response);
+                    if (payload && payload.Perfil) {
+                        this.setNome(payload.Nome);
+                        this.setPerfil(payload.Perfil);
+                    } else {
+                        this.setPerfil('usuario'); // Define um perfil padrão se não estiver presente no token
+                    }
 
                     observable.next(response);
                     observable.complete();
@@ -48,7 +79,9 @@ export class AuthService{
     logout(){
         localStorage.removeItem('token');
         this.tokenSubject.next(null);
-        this.router.navigate(['/login']);
+        this.nomeSubject.next(null);
+        this.perfilSubject.next(null);
+        this.router.navigate(['/']);
     }
 
     isAuthenticated(): boolean{
@@ -61,37 +94,9 @@ export class AuthService{
         });
     }
 
-    setPerfil(perfil: string) {
-        this.perfilSubject.next(perfil);
-    }
-
-    getPerfil$() {
-        return this.perfilSubject.asObservable(); // para usar no HTML
-    }  
-
-    isAdmin$() {
-        return this.perfilSubject.asObservable().pipe(
-            map(perfil => perfil === 'Administrador')
-        );                
-    }
-
-    isAdmix(): boolean {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            return false;
-        }
-
-        var dadosLogin = this.decodeJwtPayload(token);
-        if (dadosLogin.perfil == 'Administrador') {
-            return true;
-        }
-        return false;
-    }
-
     decodeJwtPayload(token: string): any {
         try {
           const payload = token.split('.')[1];
-          console.log('PAYLOAD -> ', payload);
           return JSON.parse(atob(payload));
         } catch (e) {
           return null;
