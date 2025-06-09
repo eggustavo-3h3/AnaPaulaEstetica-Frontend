@@ -21,37 +21,85 @@
     <img src="assets/img/logo.png" alt="Logo" class="logo">
   </div>
 
-  {{ isAdmin$ | async }}
-
-  {{ authService.isAdmin$() | async }}
-
-  {{ authService.isAdmix() }}  
-
-  {{ authService.getPerfil$() | async }}
-
   <!-- Navbar -->
-  <nav class="navbar">
-    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
-    <div class="nav-links" [class.open]="menuOpen">
-      <a routerLink="/home">Início</a>
-      <a routerLink="tipo-servico/listar">Serviços</a>
-      <a routerLink="/agendamento">Agendamentos</a>
-      <a routerLink="/sobre">Sobre</a>
-      <a routerLink="/login">Login</a>
-        <a routerLink="/perfil-usuario">
-          <mat-icon aria-hidden="false" aria-label="Profile icon" fontIcon="person"></mat-icon>
-        </a>
-      <a routerLink="/cadastro-categoria">Cadastro-categoria</a>
-      <a routerLink="/cadastro-produto">Cadastro-produto</a>
-       <a routerLink="/meus-agendamentos">Meus-agendamentos</a>
-      <a routerLink="/categoria-atualizar">Categoria-atualizar</a>
-      <a routerLink="/atualizar-produto">Produto-atualizar</a>
-      <a routerLink="/adm-agendamento">ADM-agendamento</a>
-      <a routerLink="/adm-categoria">ADM-categoria</a>
-      <a routerLink="/redefinir-senha">Redefinir-senha</a>
-     
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(247, 238, 231) !important;" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home" style="color: rgb(140, 106, 79) !important;">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" style="color: rgb(140, 106, 79) !important;">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="tipo-servico/listar" style="color: rgb(140, 106, 79) !important;">Serviços</a>
+          </li>
+
+          @if (perfilUsuario === 'Usuario') {
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/meus-agendamentos" style="color: rgb(140, 106, 79) !important;">Meus Agendamentos</a>
+            </li>
+          }
+
+          @if (perfilUsuario === 'Administrador') {
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
+                Serviços (Adm)
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/cadastro-categoria">Cadastrar</a></li>
+                <li><a class="dropdown-item" routerLink="/categoria-atualizar">Alterar</a></li>
+                <!-- <li><a class="dropdown-item" routerLink="/adm-categoria">Serviços e Produtos</a></li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
+                Produtos (Adm)
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/cadastro-produto">Cadastrar</a></li>
+                <li><a class="dropdown-item" routerLink="/atualizar-produto">Alterar</a></li>
+              </ul>
+            </li>  
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/adm-agendamento" style="color: rgb(140, 106, 79) !important;">Agendamentos</a>
+            </li>
+          }
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sobre" style="color: rgb(140, 106, 79) !important;">Sobre</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          @if (perfilUsuario === null) {
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login" style="color: rgb(140, 106, 79) !important;">Login</a>
+            </li>
+          }
+
+          @if (perfilUsuario !== null) {
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(140, 106, 79) !important;">
+                {{ nomeUsuario}}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/alterar-senha">Alterar Senha</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" (click)="authService.logout()">Sair</a></li>
+              </ul>
+            </li>
+          }
+        </ul>        
+      </div>
     </div>
   </nav>
+
+
+
+
+
+
+
 
   <!-- Conteúdo Principal -->
   <main class="content">

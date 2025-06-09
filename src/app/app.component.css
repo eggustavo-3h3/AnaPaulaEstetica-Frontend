@@ -98,48 +98,6 @@ body {
   height: auto; /* Mantém a proporção da imagem */
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Espaçamento entre os itens */
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #F7EEE7; /* Cor de fundo */
-  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
-  position: relative;
-  z-index: 1000;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #8c6a4f; /* Cor do botão */
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px; /* Espaçamento entre os links */
-  flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
-  justify-content: center; /* Centraliza os links */
-  width: 100%; /* Garante que os links ocupem toda a largura */
-}
-
-.nav-links a {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #8c6a4f; /* Cor do texto */
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 16px; /* Espaçamento interno dos links */
-  transition: background-color 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: #e6d5c3; /* Cor de fundo ao passar o mouse */
-}
 
 /* Footer */
 .footer {

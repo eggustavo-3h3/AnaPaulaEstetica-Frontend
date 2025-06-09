@@ -22,7 +22,7 @@
           [class.selected]="horarioSelecionado === horario.horario"
           [disabled]="horario.ocupado"
           (click)="horarioSelecionado = horario.horario">
-          {{ horario.horario }}
+          {{ horario.horario | mask:'00:00' }}
         </button>
       }
     </div>
