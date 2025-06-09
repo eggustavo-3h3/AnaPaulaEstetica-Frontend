@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { authInterceptor } from './interceptors/auth.interceptor';
+import { provideNgxMask } from 'ngx-mask';
 
 registerLocaleData(localePt);
 
@@ -25,6 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([authInterceptor])
     ),
+    provideNgxMask(),
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     MatSnackBarModule,
     MatButtonModule,
