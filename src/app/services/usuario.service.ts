@@ -28,4 +28,9 @@ export class UsuarioService {
         // Método para atualizar um Usuario
         return this.http.put<any>(`${this.baseUrl}/usuario/atualizar`, usuario, { headers: this.authService.getAutheHeaders() });
     }
+
+    alterarSenha(usuario: any): Observable<any> {
+        // Método para alterar a senha do usuário
+        return this.http.put<any>(`${this.baseUrl}/alterar-senha`, usuario, { headers: this.authService.getAutheHeaders() });
+    }
 }

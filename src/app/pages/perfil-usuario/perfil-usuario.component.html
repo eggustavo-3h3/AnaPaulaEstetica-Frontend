@@ -2,8 +2,6 @@
   <div class="container" *ngIf="usuario">
     <div class="sidebar">
       <div class="profile-pic">
-        <div class="circle"></div>
-        <div class="camera-icon">📷</div>
         <h2>{{ usuario.nome }}</h2>
       </div>
       <div class="dados-pessoais">
@@ -13,6 +11,8 @@
         <p><strong>E-mail:</strong> {{ usuario.email }}</p>
         <br>
         <a mat-raised-button color="primary" routerLink="/atualizar-perfil">Atualizar Dados</a>
+        <a mat-raised-button color="primary" routerLink="/atualizar-senha">Atualizar Senha</a>
+        <button mat-raised-button color="warn" (click)="logout()">Sair</button>
       </div>
     </div>
   </div>

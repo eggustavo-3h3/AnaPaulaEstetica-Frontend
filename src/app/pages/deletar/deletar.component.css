@@ -13,7 +13,7 @@
 .admin-title {
   text-align: center;
   font-weight: bold;
-  color: #b22222;
+  color: #000000;
   font-size: 1.5rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -40,7 +40,7 @@
 
 /* Nome do item */
 .admin-card strong {
-  color: #b22222;
+  color: #8c6a4f;
 }
 
 /* Botões */
@@ -51,7 +51,7 @@
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  background: #b22222;
+  background: #8c6a4f;
   color: #fff;
   transition: background 0.2s;
 }
@@ -62,7 +62,8 @@
 }
 
 .admin-card button:last-child {
-  background: #aaa;
+  background: #E5D0B9;
+  color: #000000;
 }
 
 /* Mensagem de status */

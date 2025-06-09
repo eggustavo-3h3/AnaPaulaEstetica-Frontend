@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-title>Atualizar Senha</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formSenha" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Senha Atual</mat-label>
+          <input matInput type="password" formControlName="senha" required>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Nova Senha</mat-label>
+          <input matInput type="password" formControlName="novaSenha" required>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Confirme a Nova Senha</mat-label>
+          <input matInput type="password" formControlName="confirmarNovaSenha" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Atualizar</button>
+      </form>
+      <div *ngIf="mensagem" style="margin-top: 10px; color: #8c6a4f;">{{ mensagem }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

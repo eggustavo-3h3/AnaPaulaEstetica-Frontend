@@ -20,4 +20,12 @@ export class AgendamentoService {
   listarMeusAgendamentos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/agendamento/listar`, { headers: this.authService.getAutheHeaders() });
   }
+
+  cancelarAgendamento(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/agendamento/deletar/${id}`, { headers: this.authService.getAutheHeaders() });
+  }
+
+  listarTodosAgendamentos(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/agendamento/listar-todos`, { headers: this.authService.getAutheHeaders() });
+  }
 }

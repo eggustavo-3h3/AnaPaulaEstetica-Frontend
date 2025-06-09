@@ -8,8 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-redefinir-senha',
-  standalone: true,
+  selector: 'app-enviar-email',
   imports: [
     MatCardModule,
     MatInputModule,
@@ -20,11 +19,9 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule
   ],
-  templateUrl: './redefinir-senha.component.html',
-  styleUrl: './redefinir-senha.component.css'
+  templateUrl: './enviar-email.component.html',
+  styleUrl: './enviar-email.component.css'
 })
-export class RedefinirSenhaComponent {
-  codigo: string = '';
-  novaSenha: string = '';
-  confirmarSenha: string = '';
+export class EnviarEmailComponent {
+  email: string = '';
 }

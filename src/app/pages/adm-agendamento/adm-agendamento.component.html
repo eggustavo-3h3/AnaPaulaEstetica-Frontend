@@ -1,72 +1,30 @@
 <div class="admin-container">
   <div class="admin-title">AGENDA</div>
   <div class="admin-card">
-    <table class="admin-table">
-      <thead>
-        <tr>
-          <th>Nome Cliente</th>
-          <th>Serviço Agendado</th>
-          <th>Tempo de Serviço</th>
-          <th>Início e Fim Horário</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="beige-row">
-          <td data-label="Nome Cliente">Maria Vargas</td>
-          <td data-label="Serviço Agendado">Design de sobrancelha + coloração</td>
-          <td data-label="Tempo de Serviço">1 hora</td>
-          <td data-label="Início e Fim Horário">13:30 - 14:30</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Nome Cliente">Fernanda Reis</td>
-          <td data-label="Serviço Agendado">Massagem corporal</td>
-          <td data-label="Tempo de Serviço">1 hora</td>
-          <td data-label="Início e Fim Horário">14:30 - 15:30</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Nome Cliente">Gabriela Gonçalves</td>
-          <td data-label="Serviço Agendado">Design de Sobrancelha</td>
-          <td data-label="Tempo de Serviço">30 minutos</td>
-          <td data-label="Início e Fim Horário">15:30 - 16:00</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Nome Cliente">Ana Marcela</td>
-          <td data-label="Serviço Agendado">Design de Sobrancelha</td>
-          <td data-label="Tempo de Serviço">30 minutos</td>
-          <td data-label="Início e Fim Horário">16:00 - 16:30</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-        <tr class="beige-row">
-          <td data-label="Nome Cliente">Josi Martins</td>
-          <td data-label="Serviço Agendado">Maquiagem Social</td>
-          <td data-label="Tempo de Serviço">1 hora</td>
-          <td data-label="Início e Fim Horário">16:30 - 17:30</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-        <tr class="white-row">
-          <td data-label="Nome Cliente">Elena</td>
-          <td data-label="Serviço Agendado">Micropigmentação de sobrancelhas</td>
-          <td data-label="Tempo de Serviço">2 horas</td>
-          <td data-label="Início e Fim Horário">17:00 - 19:00</td>
-          <td class="actions" data-label="Ações">
-            <a href="#">Cancelar Agendamento</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div *ngIf="agendamentos.length === 0">Nenhum agendamento encontrado.</div>
+    <div *ngIf="agendamentos.length > 0">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Nome Usuário</th>
+            <th>Serviço Agendado</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let agendamento of agendamentos; let i = index" [ngClass]="i % 2 === 0 ? 'beige-row' : 'white-row'">
+            <td data-label="Nome Usuário">{{ agendamento.nomeUsuario }}</td>
+            <td data-label="Serviço Agendado">{{ agendamento.nomeProduto }}</td>
+            <td data-label="Data">{{ agendamento.data | date:'dd/MM/yyyy' }}</td>
+            <td data-label="Horário">{{ agendamento.horaInicial }} - {{ agendamento.horaFinal }}</td>
+            <td class="actions" data-label="Ações">
+              <button class="cancel-btn" (click)="cancelarAgendamento(agendamento.id)">Cancelar Agendamento</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

@@ -18,6 +18,8 @@ import { ServicoAtualizarComponent } from './pages/atualizar-servico/atualizar-s
 import { DeletarComponent } from './pages/deletar/deletar.component';
 import { MeusAgendamentosComponent } from './pages/meus-agendamentos/meus-agendamentos.component';
 import { AtualizarPerfilComponent } from './pages/atualizar-perfil/atualizar-perfil.component';
+import { EnviarEmailComponent } from './pages/enviar-email/enviar-email.component';
+import { AtualizarSenhaComponent } from './pages/atualizar-senha/atualizar-senha.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,6 +28,7 @@ export const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'servicos/:id', component: ServicosComponent },
   { path: 'cadastro', component: CadastrarComponent },
+  { path: 'enviar-email', component: EnviarEmailComponent },
   { path: 'cadastro-categoria', component: CadastroCategoriaComponent, canActivate: [AuthGuard]},
   { path: 'categoria-atualizar', component: CategoriaAtualizarComponent, canActivate: [AuthGuard]},
   { path: 'cadastro-produto', component: CadastroServicoComponent, canActivate: [AuthGuard]},
@@ -38,5 +41,6 @@ export const routes: Routes = [
   { path: 'deletar/:id', component: DeletarComponent, canActivate: [AuthGuard]},
   { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [AuthGuard]},
   { path: 'atualizar-perfil', component: AtualizarPerfilComponent, canActivate: [AuthGuard]},
+  { path: 'atualizar-senha', component: AtualizarSenhaComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: "/home" } // Mova esta rota para o final
 ];
