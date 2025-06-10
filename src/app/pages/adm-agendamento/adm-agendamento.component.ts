@@ -31,7 +31,7 @@ export class AdmAgendamentoComponent implements OnInit {
           // Junta data e hora para comparar
           const dataA = new Date(`${a.data}T${a.horaInicial}`);
           const dataB = new Date(`${b.data}T${b.horaInicial}`);
-          return dataB.getTime() - dataA.getTime(); // Mais atual primeiro
+          return dataA.getTime() - dataB.getTime(); // Mais atual primeiro
         });
     });
   }

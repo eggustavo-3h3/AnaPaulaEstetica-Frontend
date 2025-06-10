@@ -32,7 +32,7 @@ export class MeusAgendamentosComponent implements OnInit {
         .sort((a, b) => {
           const dataA = new Date(`${a.data}T${a.horaInicial}`);
           const dataB = new Date(`${b.data}T${b.horaInicial}`);
-          return dataB.getTime() - dataA.getTime(); // Mais atual primeiro
+          return dataA.getTime() - dataB.getTime(); // Mais atual primeiro
         });
     });
   }
