@@ -10,7 +10,7 @@
     <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
     <div class="nav-links" [ngClass]="{ 'open': menuOpen }">
       <a class="custom-navbar-link" routerLink="/home">Home</a>
-      <a class="custom-navbar-link" routerLink="tipo-servico/listar">Serviços</a>
+      <a class="custom-navbar-link" routerLink="tipo-produto/listar">Produtos</a>
 
       <ng-container *ngIf="perfilUsuario === 'Usuario'">
         <a class="custom-navbar-link" routerLink="/meus-agendamentos">Meus Agendamentos</a>

@@ -23,10 +23,10 @@ import { ResetSenhaComponent } from './pages/reset-senha/reset-senha.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'tipo-servico/listar', component: TipoServicoListComponent }, 
+  { path: 'tipo-produto/listar', component: TipoServicoListComponent }, 
   { path: 'home', component: HomeComponent },
   { path: 'sobre', component: SobreComponent },
-  { path: 'servicos/:id', component: ServicosComponent, canActivate: [AuthGuard]},
+  { path: 'produtos/:id', component: ServicosComponent, canActivate: [AuthGuard]},
   { path: 'cadastro', component: CadastrarComponent },
   { path: 'enviar-email', component: EnviarEmailComponent },
   { path: 'cadastro-categoria', component: CadastroCategoriaComponent, canActivate: [AuthGuard]},

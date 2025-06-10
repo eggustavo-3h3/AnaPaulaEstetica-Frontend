@@ -16,7 +16,7 @@
         <tr *ngFor="let agendamento of agendamentos; let i = index" [ngClass]="i % 2 === 0 ? 'beige-row' : 'white-row'">
           
           <td data-label="Serviço Agendado">{{ agendamento.nomeProduto }}</td>
-          <td data-label="Início">{{ agendamento.data | date:'dd/MM/yyyy' }}</td>
+          <td data-label="Data">{{ agendamento.data | date:'dd/MM/yyyy' }}</td>
           <td data-label="Início">
             {{ agendamento.horaInicial }}
           </td>
